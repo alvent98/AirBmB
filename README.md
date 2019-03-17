@@ -19,3 +19,5 @@ The team programming project, for the course of *Software Engineering*, at **AUE
  Παρακάτω υπάρχει το διάγραμμα περιπτώσεων χρήσης :
  
  
+ 
+ ![](R1.png)
