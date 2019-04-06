@@ -136,11 +136,11 @@
 
 #### *Διάγραμμα Δραστηριοτήτων:*
 
-  ![](UC_4_Activity_Diagram.png)
+  ![](Use_Cases_Diagrams_(png's)/UC_4_Activity_Diagram.png)
 
 #### *Διάγραμμα Ακολουθίας:*
 
-  ![](UC_4_Sequence_Diagram.png)
+  ![](Use_Cases_Diagrams_(png's)/UC_4_Sequence_Diagram.png)
   
 ## 5. __Αξιολόγηση Ενοικιαστή__
 #### Πρωτεύων Δράστης:
@@ -166,11 +166,11 @@
 
 #### *Διάγραμμα Δραστηριοτήτων:*
 
-  ![](UC_5_Activity_Diagram.png)
+  ![](Use_Cases_Diagrams_(png's)/UC_5_Activity_Diagram.png)
 
 #### *Διάγραμμα Ακολουθίας:*
 
-  ![](UC_5_Sequence_Diagram.png)
+  ![](Use_Cases_Diagrams_(png's)/UC_5_Sequence_Diagram.png)
 
 ## 6. __Διαχείριση αιτημάτων ενοικίασης__
 #### Πρωτεύων Δράστης:
@@ -262,11 +262,11 @@
 
 #### *Διάγραμμα Δραστηριοτήτων:*
 
-  ![](UC_8_Activity_Diagram.png)
+  ![](Use_Cases_Diagrams_(png's)/UC_8_Activity_Diagram.png)
 
 #### *Διάγραμμα Ακολουθίας:*
 
-  ![](UC_8_Sequence_Diagram.png)
+  ![](Use_Cases_Diagrams_(png's)/UC_8_Sequence_Diagram.png)
 
 
 
