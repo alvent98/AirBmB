@@ -51,7 +51,7 @@ m2=0..1
 καταλήγει σε</panel_attributes><additional_attributes>10;80;110;80;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>220</x><y>590</y><w>110</w><h>50</h></coordinates><panel_attributes>lt=-
 αφορά
 m1=1
-m2=*</panel_attributes><additional_attributes>10;20;90;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>740</x><y>410</y><w>210</w><h>160</h></coordinates><panel_attributes>Evaluation
+m2=*</panel_attributes><additional_attributes>10;20;90;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>740</x><y>410</y><w>210</w><h>160</h></coordinates><panel_attributes>Evaluation {abstract}
 --
 - evaluationId: Integer
 - feedback: Integer [0..5]
@@ -125,7 +125,7 @@ _+getNumOfHouses(): int_
 _#setNumOfHouses(numOfHouses: int)_
 _+getAveragePrice(): Money_
 _#setAveragePrice(averagePrice: Money)_
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>0</y><w>200</w><h>310</h></coordinates><panel_attributes>User
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>0</y><w>200</w><h>320</h></coordinates><panel_attributes>User {abstract}
 --
 -firstName: String
 -lastName: String
@@ -145,7 +145,9 @@ _#setAveragePrice(averagePrice: Money)_
 +getUsername(): String
 +setUsername(username: String)
 +getPassword(): String
-+setPassword(password: String)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>160</y><w>230</w><h>120</h></coordinates><panel_attributes>Owner
++setPassword(password: String)
++remove(user: User) {abstract}
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>160</y><w>230</w><h>120</h></coordinates><panel_attributes>Owner
 --
 _-numOfOwners: int_
 --
@@ -153,11 +155,11 @@ _+getNumOfOwners(): int_
 _#setNumOfOwners(numOfOwners: int)_
 +addHouse(House house)
 +removeHouse(House house)
-+removeOwner(User owner)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>180</y><w>230</w><h>90</h></coordinates><panel_attributes>Renter
++remove(owner: Owner) </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>180</y><w>230</w><h>90</h></coordinates><panel_attributes>Renter
 --
 _-numOfRenters: int_
 --
 _+getNumOfRenters(): int_
 _#setNumOfRenters(numOfRenters: int)_
-+removeRenter(User renter)
++remove(renter: Renter) 
 </panel_attributes><additional_attributes></additional_attributes></element></diagram>
