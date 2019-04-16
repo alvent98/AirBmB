@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class House {
 
     private String city;
@@ -6,13 +8,16 @@ public class House {
     private int area;
     private String floor;
     private String rooms;
-    private Money price;
-    private int numOfHouses;
-    private Money averagePrice;
+    private double price;
+    private static int numOfHouses;
+    private static double averagePrice;
+    private static ArrayList<House> listHouses = new ArrayList<>();
+
+
 
     House(){}
 
-    House(String city, String street, int number, int area, String floor, String rooms, Money price){
+    House(String city, String street, int number, int area, String floor, String rooms, double price){
         this.city=city;
         this.street=street;
         this.number=number;
@@ -70,27 +75,39 @@ public class House {
         this.rooms = rooms;
     }
 
-    public Money getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Money price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public static int getNumOfHouses() {
-        return numOfHouses;
+    /*  public void setPrice(double price) {
+       Money tmp=new Money(price);
+       this.price = (double) Money.getMoney();
+    }*/
+
+    public int getNumOfHouses() {
+        return listHouses.size();
     }
 
-    public static void setNumOfHouses(int numOfHouses) {
-        this.numOfHouses = numOfHouses;
-    }
+    public static double getAveragePrice() {
+        if (listHouses.size() == 0){
+            System.out.println("There are no registered houses yet.");
+            return 0;
+        } //controller
 
-    public static Money getAveragePrice() {
+        double sum = 0;
+
+        for(House h : listHouses){
+            sum += h.getPrice();
+        }
+
+        averagePrice= sum/listHouses.size();
         return averagePrice;
     }
 
-    public static void setAveragePrice(Money averagePrice) {
-        this.averagePrice = averagePrice;
-    }
+
+
 }

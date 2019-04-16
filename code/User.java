@@ -1,10 +1,11 @@
-public class User {
+public abstract class User {
     private String firstName;
     private String lastName;
     private String email;
     private String IBAN;
     private String username;
     private String password;
+
 
     User(){}
 
@@ -60,4 +61,8 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public void remove(User user){};
+
+
 }
