@@ -6,7 +6,6 @@ public class Lease {
     private long leaseId = new Random().nextLong();
     private Period duration;
     private long cost;
-    private long repairsValue = 0;
     private static ArrayList<Lease> leaseList ;
     private static Period averageDuration = Period.ZERO;
 
