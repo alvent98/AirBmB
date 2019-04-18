@@ -7,8 +7,6 @@ public class EvaluationForRenter extends Evaluation {
 
     public EvaluationForRenter(int feedback) {
     	this(feedback,"",0);
-        evaluationsForRentersList.add(this);
-        recalculateAverage();
     }
 
     public EvaluationForRenter(int feedback, String comments, int repairsValue) {

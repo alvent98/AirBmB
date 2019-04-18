@@ -58,7 +58,7 @@ class LeaseTest {
 		Period period = Period.of(0,0,20);
 		Lease lease = new Lease(period,1040);
 		lease.setCost(2000);
-		Assert.assertEquals(2000,lease.getCost());
+		Assert.assertEquals(2000,lease.getCost(),0.00001);
 	}
 
 	@Test
@@ -234,7 +234,7 @@ class LeaseTest {
 		new Lease(period,1002);
 		ArrayList<Lease> leases1000 = Lease.findLeaseByCost(1000);
 		Assert.assertEquals(2,leases1000.size());
-		Assert.assertTrue(leases1000.get(0).getCost()==leases1000.get(1).getCost());		
+		Assert.assertEquals(leases1000.get(0).getCost(),leases1000.get(1).getCost(),0.00001);		
 	}
 	
 }
