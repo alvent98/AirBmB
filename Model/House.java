@@ -2,6 +2,8 @@ import java.util.*;
 
 public class House {
 
+    Random random = new Random();
+    private long id = (long)random.nextInt() + (long) (1L << 31);
     private String city;
     private String street;
     private int number;
@@ -17,7 +19,8 @@ public class House {
 
     House(){}
 
-    House(String city, String street, int number, int area, String floor, String rooms, double price){
+    House(long id, String city, String street, int number, int area, String floor, String rooms, double price){
+        this.id=id;
         this.city=city;
         this.street=street;
         this.number=number;
@@ -25,6 +28,10 @@ public class House {
         this.floor=floor;
         this.rooms=rooms;
         this.price=price;
+    }
+
+    public long getId(){
+        return id;
     }
 
     public String getCity() {
@@ -82,11 +89,6 @@ public class House {
     public void setPrice(double price) {
         this.price = price;
     }
-
-    /*  public void setPrice(double price) {
-       Money tmp=new Money(price);
-       this.price = (double) Money.getMoney();
-    }*/
 
     public int getNumOfHouses() {
         return listHouses.size();

@@ -6,8 +6,8 @@ public class Owner extends User{
     private ArrayList<House> listHouse = new  ArrayList<>();
 
 
-    Owner(String firstName, String lastName, String email, String IBAN, String username, String password){
-        super(firstName,lastName,email,IBAN,username,password);
+    Owner(long id, String firstName, String lastName, String email, String IBAN, String username, String password){
+        super(id,firstName,lastName,email,IBAN,username,password);
         listOwner.add(this);
     }
 

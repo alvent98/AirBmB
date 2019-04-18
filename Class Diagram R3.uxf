@@ -6,31 +6,35 @@ m1=1</help_text>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>370</x>
+      <x>450</x>
       <y>400</y>
-      <w>430</w>
-      <h>310</h>
+      <w>320</w>
+      <h>370</h>
     </coordinates>
     <panel_attributes>Request
 --
-_- numOfRequests: Integer_
-_- numOfAcceptedRequests: Integer_
-- RequestId: Integer
+- requestId: long
 - submissionDate: LocalDate
 - startDate: LocalDate
 - endDate: LocalDate
 - accepted: Boolean
+_- numOfAcceptedRequests: Integer_
+_- requestList: ArrayList&lt;Request&gt;_
 --
 + getRequestId(): Integer {query}
 + getSubmissionDate(): LocalDate {query}
 + getStartDate(): LocalDate {query}
-+ getEndDate(): LocalDate {query}
++ setStartDate(startDate: LocaleDate)
++ getEndDate(): LocaleDate {query}
++ setEndDate(endDate: LocaleDate)
 + setAccepted()
 + isAccepted(): Boolean {query}
-_# setΝumOfRequests  (numOfRequests: Integer)_
 _+ getΝumOfRequests(): Integer {query}_
-_# setΝumOfAcceptedRequests  (numOfAcceptedRequests: Integer)_
-_+ getΝumOfAcceptedRequests(): Integer {query}_</panel_attributes>
+_+ getΝumOfAcceptedRequests(): Integer {query}_
++ remove()
+_+ removeAll()_
++ equals(obj: Object): boolean
++ hashCode(): int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -38,19 +42,19 @@ _+ getΝumOfAcceptedRequests(): Integer {query}_</panel_attributes>
     <coordinates>
       <x>260</x>
       <y>320</y>
-      <w>130</w>
+      <w>210</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>lt=-
 λαμβάνει
 m1=*
 m2=1</panel_attributes>
-    <additional_attributes>110.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
+    <additional_attributes>190.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
+      <x>720</x>
       <y>310</y>
       <w>100</w>
       <h>110</h>
@@ -64,13 +68,13 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>580</x>
-      <y>130</y>
-      <w>60</w>
-      <h>110</h>
+      <x>590</x>
+      <y>90</y>
+      <w>110</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;40.0;10.0;40.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0;90.0;130.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -90,9 +94,9 @@ m2=*
     <id>UMLClass</id>
     <coordinates>
       <x>880</x>
-      <y>130</y>
-      <w>310</w>
-      <h>260</h>
+      <y>20</y>
+      <w>370</w>
+      <h>360</h>
     </coordinates>
     <panel_attributes>Lease
 --
@@ -124,30 +128,30 @@ _+ removeAll()_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>790</x>
-      <y>380</y>
-      <w>140</w>
-      <h>90</h>
+      <x>760</x>
+      <y>370</y>
+      <w>170</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=0..1
 καταλήγει σε</panel_attributes>
-    <additional_attributes>10.0;60.0;100.0;60.0;100.0;10.0</additional_attributes>
+    <additional_attributes>10.0;70.0;130.0;70.0;130.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>250</x>
       <y>630</y>
-      <w>140</w>
+      <w>220</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
 αφορά
 m1=1
 m2=*</panel_attributes>
-    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -173,17 +177,17 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>880</x>
+      <x>900</x>
       <y>690</y>
       <w>410</w>
       <h>230</h>
     </coordinates>
     <panel_attributes>EvaluationForRenter
 --
-_- numOfEvaluationsForRenter: Integer_
 - damages: Boolean
-- repairsValue: Money
-_- averageFeedbackForRenter: Real_
+- repairsValue: double
+_-evaluationForRentersList: ArrayList&lt;EvaluationForRenter&gt;_
+_- averageFeedbackForRenter: double_
 --
 + setDamages(damages: Boolean)
 + getDamages(): Boolean {query}
@@ -204,32 +208,32 @@ _+ getAverageFeedbackForRenter(): Real {query}_
     <id>Relation</id>
     <coordinates>
       <x>1000</x>
-      <y>380</y>
+      <y>370</y>
       <w>80</w>
-      <h>110</h>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=-
 &lt; κρίνει
 m1=0..2
 m2=1</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>280</x>
-      <y>130</y>
-      <w>110</w>
-      <h>90</h>
+      <y>90</y>
+      <w>120</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>390</x>
-      <y>750</y>
+      <x>420</x>
+      <y>790</y>
       <w>410</w>
       <h>150</h>
     </coordinates>
@@ -249,7 +253,7 @@ _+ getAverageFeedbackForHouses(): Real {query}_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>990</x>
+      <x>1010</x>
       <y>630</y>
       <w>50</w>
       <h>80</h>
@@ -261,14 +265,14 @@ m2=0..1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>790</x>
+      <x>820</x>
       <y>610</y>
-      <w>130</w>
-      <h>200</h>
+      <w>100</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 m2=0..1</panel_attributes>
-    <additional_attributes>110.0;10.0;40.0;10.0;40.0;170.0;10.0;170.0</additional_attributes>
+    <additional_attributes>80.0;10.0;40.0;10.0;40.0;210.0;10.0;210.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -276,20 +280,23 @@ m2=0..1</panel_attributes>
       <x>0</x>
       <y>400</y>
       <w>260</w>
-      <h>470</h>
+      <h>490</h>
     </coordinates>
     <panel_attributes>House
 --
-_- numOfHouses: int_
-_- averagePrice: Money_
+-id: long
 -city: String
 -street: String
 -number: int
 -area: int
 -floor: String
 -rooms: String
--price: Money
+-price: double
+_-numOfHouses: int_
+_-averagePrice: double_
+_-listHouses: ArrayList&lt;House&gt;_
 --
++getId(): long
 +getCity(): String
 +setCity(city: String)
 +getStreet(): String
@@ -302,25 +309,24 @@ _- averagePrice: Money_
 +setFloor(floor: String)
 +getRooms(): String
 +setRooms(rooms: String)
-+getPrice(): Money
-+setPrice(price: Money)
-_+getNumOfHouses(): int_
-_#setNumOfHouses(numOfHouses: int)_
-_+getAveragePrice(): Money_
-_#setAveragePrice(averagePrice: Money)_
++getPrice(): double
++setPrice(price: double)
++getNumOfHouses(): int
+_+getAveragePrice(): double_
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>370</x>
-      <y>40</y>
+      <x>380</x>
+      <y>0</y>
       <w>220</w>
-      <h>350</h>
+      <h>370</h>
     </coordinates>
     <panel_attributes>User {abstract}
 --
+-id: long
 -firstName: String
 -lastName: String
 -email: String
@@ -328,17 +334,18 @@ _#setAveragePrice(averagePrice: Money)_
 -username: String
 -password: String
 --
-+getFirstName(): String
++getId(): long {query}
++getFirstName(): String {query}
 +setFirstName(firstName: String)
-+getLastName(): String
++getLastName(): String {query}
 +setLastName(lastName: String)
-+getEmail(): String
++getEmail(): String {query}
 +setEmail(email: String)
-+getIBAN(): String
++getIBAN(): String {query}
 +setIBAN(iban: String)
-+getUsername(): String
++getUsername(): String {query}
 +setUsername(username: String)
-+getPassword(): String
++getPassword(): String {query}
 +setPassword(password: String)
 +remove(user: User) {abstract}
 </panel_attributes>
@@ -367,9 +374,9 @@ _#setAveragePrice(averagePrice: Money)_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
+      <x>630</x>
       <y>220</y>
-      <w>260</w>
+      <w>210</w>
       <h>100</h>
     </coordinates>
     <panel_attributes>Renter
