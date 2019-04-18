@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Owner extends User{
     private int numOfOwners;
-    ArrayList<User> listOwner = new  ArrayList<>();
-    ArrayList<House> listHouse = new  ArrayList<>();
+    private ArrayList<Owner> listOwner = new  ArrayList<>();
+    private ArrayList<House> listHouse = new  ArrayList<>();
 
 
     Owner(String firstName, String lastName, String email, String IBAN, String username, String password){
@@ -23,7 +23,7 @@ public class Owner extends User{
         listHouse.remove(house);
     }
 
-    public void remove (Owner owner){
+    public void remove(Owner owner){
         listOwner.remove(owner);
     }
 

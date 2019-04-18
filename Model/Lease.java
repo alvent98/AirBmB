@@ -5,11 +5,11 @@ import java.util.Random;
 public class Lease {
     private long leaseId = new Random().nextLong();
     private Period duration;
-    private int cost;
+    private double cost;
     private static ArrayList<Lease> leaseList = new ArrayList<Lease>();
     private static Period averageDuration = Period.ZERO;
 
-    public Lease(Period duration, int cost){
+    public Lease(Period duration, double cost){
     	duration = duration.normalized();
         this.duration=duration;
         this.cost=cost;
@@ -26,9 +26,9 @@ public class Lease {
 
     public Period getDuration() { return duration;}
 
-    public void setCost(int cost) { this.cost=cost; }
+    public void setCost(double cost) { this.cost=cost; }
 
-    public int getCost() { return cost; }
+    public double getCost() { return cost; }
 
     public static int getNumOfLeases() { return leaseList.size(); }
 
