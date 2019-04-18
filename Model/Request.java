@@ -9,11 +9,7 @@ public class Request {
     private LocalDate endDate;
     private boolean accepted = false;
     private static int numOfAcceptedRequests = 0;
-    private static ArrayList<Request> requestList ;
-
-    Request() {
-        requestList.add(this);
-    }
+    private static ArrayList<Request> requestList = new ArrayList<Request>();
 
     public Request(LocalDate submissionDate, LocalDate startDate, LocalDate endDate) {
         this.submissionDate = submissionDate;
@@ -36,12 +32,47 @@ public class Request {
 
     public boolean isAccepted() { return accepted; }
 
-    public void setAccepted() {
+    @Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (requestId ^ (requestId >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Request other = (Request) obj;
+		if (requestId != other.requestId)
+			return false;
+		return true;
+	}
+
+	public void setAccepted() {
         accepted = true;
         numOfAcceptedRequests++;
     }
+	
+	public void remove() {
+		if(!requestList.isEmpty()) requestList.remove(this);
+		numOfAcceptedRequests=0;
+		for(Request r : requestList) {
+			if(r.isAccepted()) numOfAcceptedRequests++;
+		}
+	}
+	
+	public static void removeAll() {
+		requestList.clear();
+		numOfAcceptedRequests=0;
+	}
 
     public static int getNumOfRequests() { return requestList.size(); }
 
-    public static int getNumOfAcceptedRequests() { return numOfAcceptedRequests; }
+    public static int getNumOfAcceptedRequests() { return numOfAcceptedRequests; } 
 }

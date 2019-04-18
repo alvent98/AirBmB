@@ -1,9 +1,7 @@
-import org.junit.Assert;
-//import org.junit.Before;
-
 import java.time.Period;
 import java.util.ArrayList;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,13 +13,13 @@ class LeaseTest {
 	}
 	
 	@Test
-	void testGetLeaseIdWithNoLeases() {
+	void testGetNumOfLeasesWithNoLeases() {
 		int numOfLeases = Lease.getNumOfLeases();
 		Assert.assertEquals(0,numOfLeases);
 	}
 	
 	@Test
-	void testGetLeaseIdWithLeases() {
+	void testGetNumOfLeasesWithLeases() {
 		Period period = Period.of(0,0,20);
 		new Lease(period,1090);
 		int numOfLeases = Lease.getNumOfLeases();
@@ -88,7 +86,7 @@ class LeaseTest {
 		Lease lease = new Lease(period,1200);
 		period = Period.of(0,0,30);
 		new Lease(period,1020);
-		lease.removeLease();
+		lease.remove();
 		Assert.assertEquals(1,Lease.getNumOfLeases());
 	}
 	
@@ -96,7 +94,7 @@ class LeaseTest {
 	void testRemoveLeaseWith1Lease() {
 		Period period = Period.of(0,0,20);
 		Lease lease = new Lease(period,1050);
-		lease.removeLease();
+		lease.remove();
 		Assert.assertEquals(0,Lease.getNumOfLeases());
 	}
 	
@@ -104,8 +102,8 @@ class LeaseTest {
 	void testRemoveLeaseWithNoLeases() {
 		Period period = Period.of(0,0,20);
 		Lease lease = new Lease(period,1030);
-		lease.removeLease();
-		lease.removeLease();
+		lease.remove();
+		lease.remove();
 		Assert.assertEquals(0,Lease.getNumOfLeases());
 	}
 	
@@ -113,17 +111,10 @@ class LeaseTest {
 	void testHashCode() {
 		Period period = Period.of(0,0,23);
 		Lease l1 = new Lease(period,1013);
-		Lease l2 = new Lease(period,1013);
+		Lease l2 = l1;
 		Assert.assertEquals(l1.hashCode(),l2.hashCode());	
-	}
-	
-	@Test
-	void testEquals() {
-		Period period = Period.of(0,0,23);
-		Lease l = new Lease(period,1013);
-		Lease l2 = new Lease(period,1013);
-		Assert.assertTrue(l.equals(l2));	
-	}
+		Assert.assertTrue(l1.equals(l2));
+	}	
 	
 	@Test
 	void testEqualsWhenOneNull() {
@@ -142,20 +133,60 @@ class LeaseTest {
 	}
 	
 	@Test
-	void testEqualsWhenOtherDuration() {
+	void testEqualsWhenOtherId() {
+		Period period = Period.of(0,0,20);
+		Lease l = new Lease(period,1000);
+		Lease l2 = new Lease(period,1000);
+		Assert.assertFalse(l.equals(l2));
+	}
+	
+	@Test
+	void testSimilarWhenEquals() {
+		Period period = Period.of(0,0,23);
+		Lease l = new Lease(period,1013);
+		Lease l2 = l;
+		Assert.assertTrue(l.similarWith(l2));	
+	}
+	
+	@Test
+	void testSimilarWhenSimilar() {
+		Period period = Period.of(0,0,23);
+		Lease l = new Lease(period,1013);
+		Lease l2 = new Lease(period,1013);
+		Assert.assertTrue(l.similarWith(l2));	
+	}
+	
+	@Test
+	void testSimilarWhenOneNull() {
+		Period period = Period.of(0,0,23);
+		Lease l = new Lease(period,1013);
+		Lease l2 = null;
+		Assert.assertFalse(l.similarWith(l2));	
+	}
+	
+	@Test
+	void testSimilarWhenOtherClass() {
+		Period period = Period.of(0,0,23);
+		Lease l = new Lease(period,1013);
+		String s = "In the Castle of Aaaaaarg";
+		Assert.assertFalse(l.similarWith(s));	
+	}
+	
+	@Test
+	void testSimilarWhenOtherDuration() {
 		Period period = Period.of(0,0,23);
 		Lease l = new Lease(period,1000);
 		period = Period.of(0,0,20);
 		Lease l2 = new Lease(period,1000);
-		Assert.assertFalse(l.equals(l2));	
+		Assert.assertFalse(l.similarWith(l2));	
 	}
 	
 	@Test
-	void testEqualsWhenOtherCost() {
+	void testSimilarWhenOtherCost() {
 		Period period = Period.of(0,0,20);
 		Lease l = new Lease(period,1013);
 		Lease l2 = new Lease(period,1000);
-		Assert.assertFalse(l.equals(l2));	
+		Assert.assertFalse(l.similarWith(l2));	
 	}
 	
 	@Test
@@ -172,7 +203,7 @@ class LeaseTest {
 	void testFindMissingLeaseById() {
 		Period period = Period.of(0,0,23);
 		Lease l = new Lease(period,1013);
-		l.removeLease();
+		l.remove();
 		period = Period.of(0,0,20);
 		new Lease(period,1000);
 		Lease returnedLease = Lease.findLeaseById(l.getLeaseId());

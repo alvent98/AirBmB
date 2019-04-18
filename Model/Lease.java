@@ -34,7 +34,7 @@ public class Lease {
 
     public static Period getAverageDuration() { return averageDuration; }
 
-    public void removeLease() {
+    public void remove() {
         if(!leaseList.isEmpty()) {
             leaseList.remove(this);
             recalculateAverage();            
@@ -58,17 +58,7 @@ public class Lease {
         }
     }
 	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + cost;
-		result = prime * result + ((duration == null) ? 0 : duration.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
+	public boolean similarWith(Object obj) {
 		if (this == obj)
 			return true;
 		if (obj == null)
@@ -85,7 +75,28 @@ public class Lease {
 			return false;
 		return true;
 	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (leaseId ^ (leaseId >>> 32));
+		return result;
+	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Lease other = (Lease) obj;
+		if (leaseId != other.leaseId)
+			return false;
+		return true;
+	}
 
 	public static Lease findLeaseById(long id) {
 		for(Lease l : leaseList) {
