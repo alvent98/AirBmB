@@ -114,7 +114,7 @@ public class Lease {
 		return returnedLeases;
 	}
 	
-	public static ArrayList<Lease> findLeaseByCost(int cost){
+	public static ArrayList<Lease> findLeaseByCost(double cost){
 		ArrayList<Lease> returnedLeases = new ArrayList<Lease>();
 		for(Lease l : leaseList) {
 			if(l.getCost()==cost) returnedLeases.add(l);

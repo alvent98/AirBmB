@@ -1,36 +1,49 @@
 import java.util.ArrayList;
 
 public class EvaluationForRenter extends Evaluation {
-    private long repairsValue = 0;
-    private static ArrayList<EvaluationForRenter> evaluationsForRentersList ;
-    private static double averageFeedbackForRenters;
+    private int repairsValue = 0;
+    private static ArrayList<EvaluationForRenter> evaluationsForRentersList = new ArrayList<EvaluationForRenter>();
+    private static double averageFeedbackForRenters = 0;
 
-    public EvaluationForRenter() {
+    public EvaluationForRenter(int feedback) {
+    	this(feedback,"",0);
         evaluationsForRentersList.add(this);
         recalculateAverage();
     }
 
-    public EvaluationForRenter(long evaluationId, int feedback, String comments, long repairsValue) {
-        super(evaluationId,feedback,comments);
+    public EvaluationForRenter(int feedback, String comments, int repairsValue) {
+        super(feedback,comments);
         this.repairsValue = repairsValue;
         evaluationsForRentersList.add(this);
         recalculateAverage();
     }
 
-    public void setRepairsValue(long repairsValue) { this.repairsValue = repairsValue; }
+    public void setRepairsValue(int repairsValue) { this.repairsValue = repairsValue; }
 
-    public long getRepairsValue() { return repairsValue; }
+    public int getRepairsValue() { return repairsValue; }
 
-    public static double getAverageFeedbackForRenter() { return averageFeedbackForRenters; }
+    public static double getAverageFeedback() { return averageFeedbackForRenters; }
 
-    public static int getNumOfEvaluationsForRenter() { return evaluationsForRentersList.size(); }
+    public static int getNumOfEvaluations() { return evaluationsForRentersList.size(); }
 
     public boolean damages() {return repairsValue!=0; }
 
     private static void recalculateAverage() {
         averageFeedbackForRenters = 0;
-        int num = getNumOfEvaluationsForRenter();
-        for (EvaluationForRenter e : evaluationsForRentersList) averageFeedbackForRenters += e.getFeedback();
-        averageFeedbackForRenters /= num;
+        int num = getNumOfEvaluations();
+        if(num!=0) {
+	        for (EvaluationForRenter e : evaluationsForRentersList) averageFeedbackForRenters += e.getFeedback();
+	        averageFeedbackForRenters /= num;
+	    }
+    }  
+    
+    public void remove() {
+    	if(!evaluationsForRentersList.isEmpty()) evaluationsForRentersList.remove(this);
+    	recalculateAverage();
+    }
+    
+    public static void removeAll() {
+    	evaluationsForRentersList.clear();
+    	recalculateAverage();
     }
 }
