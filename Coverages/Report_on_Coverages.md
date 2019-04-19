@@ -6,16 +6,16 @@ In this file are presented the coverages that junit tests achieved:
 ![](EvaluationForHouse_Coverages.JPG)
 
 
-1. EvaluationForRenter Class:
+2. EvaluationForRenter Class:
 
 ![](EvaluationForRenter_Coverages.JPG)
 
 
-1. Lease Class:      
+3. Lease Class:      
 
 ![](Lease_Coverages.JPG)
 
 
-1. Request Class:      
+4. Request Class:      
 
 ![](Request_Coverages.JPG)
