@@ -1,4 +1,5 @@
-In this file are presented the coverages that junit tests achieved.
+In this file are presented the coverages that junit tests achieved:
+------
 
 1. EvaluationForHouse Class:
 
