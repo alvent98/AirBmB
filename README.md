@@ -11,3 +11,5 @@ Here, you can see a specimen catalogue of the project's files:
 
 1. [Test Code](AirBmB/Test/)
 
+1. [Coverages](AirBmB/Coverages/)
+
