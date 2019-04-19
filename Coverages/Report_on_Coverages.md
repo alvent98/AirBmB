@@ -1,7 +1,7 @@
 In this file are presented the coverages that junit tests achieved.
 
 1. EvaluationForHouse Class:
-![](EvaluationForHouse_Coverages.jpg)
+![](EvaluationForHouse_Coverages.JPG)
 
 1. EvaluationForRenter Class:
 ![](EvaluationForRenter_Coverages.jpg)
