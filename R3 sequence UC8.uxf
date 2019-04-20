@@ -4,8 +4,8 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>490</x>
-      <y>180</y>
+      <x>760</x>
+      <y>160</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -16,8 +16,8 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>230</x>
-      <y>180</y>
+      <x>500</x>
+      <y>160</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -26,45 +26,21 @@ bg=red</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>530</x>
-      <y>280</y>
-      <w>20</w>
-      <h>190</h>
-    </coordinates>
-    <panel_attributes>
-bg=orange</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>270</x>
-      <y>290</y>
-      <w>20</w>
-      <h>170</h>
-    </coordinates>
-    <panel_attributes>
-bg=red</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>200</y>
+      <x>540</x>
+      <y>180</y>
       <w>30</w>
-      <h>110</h>
+      <h>100</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>280</y>
+      <x>550</x>
+      <y>260</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -75,8 +51,8 @@ setId(id)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>530</y>
+      <x>550</x>
+      <y>440</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -87,8 +63,8 @@ getId()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>340</y>
+      <x>550</x>
+      <y>320</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -99,8 +75,8 @@ setNumber(number)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>300</y>
+      <x>550</x>
+      <y>280</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -111,8 +87,8 @@ setCity(city)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>320</y>
+      <x>550</x>
+      <y>300</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -123,8 +99,8 @@ setStreet(street)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>380</y>
+      <x>550</x>
+      <y>360</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -135,8 +111,8 @@ setFloor(floor)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>360</y>
+      <x>550</x>
+      <y>340</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -147,8 +123,8 @@ setArea(area)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>400</y>
+      <x>550</x>
+      <y>380</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -159,8 +135,8 @@ setRooms(rooms)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>420</y>
+      <x>550</x>
+      <y>400</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -171,20 +147,8 @@ setPrice(price)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>690</y>
-      <w>270</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-listOfHouses</panel_attributes>
-    <additional_attributes>10.0;20.0;250.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>280</x>
-      <y>630</y>
+      <x>550</x>
+      <y>540</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -195,8 +159,8 @@ getFloor()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>590</y>
+      <x>550</x>
+      <y>500</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -207,8 +171,8 @@ getNumber()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>550</y>
+      <x>550</x>
+      <y>460</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -219,8 +183,8 @@ getCity()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>570</y>
+      <x>550</x>
+      <y>480</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -231,8 +195,8 @@ getStreet()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>610</y>
+      <x>550</x>
+      <y>520</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -243,8 +207,8 @@ getArea()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>650</y>
+      <x>550</x>
+      <y>560</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -255,8 +219,8 @@ getRooms()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>670</y>
+      <x>550</x>
+      <y>580</y>
       <w>270</w>
       <h>40</h>
     </coordinates>
@@ -267,30 +231,8 @@ getPrice()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>450</y>
-      <w>30</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>530</x>
-      <y>200</y>
-      <w>30</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>530</x>
-      <y>460</y>
+      <x>800</x>
+      <y>180</y>
       <w>30</w>
       <h>100</h>
     </coordinates>
@@ -300,10 +242,10 @@ getPrice()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>530</x>
-      <y>540</y>
+      <x>800</x>
+      <y>260</y>
       <w>20</w>
-      <h>190</h>
+      <h>360</h>
     </coordinates>
     <panel_attributes>
 bg=orange</panel_attributes>
@@ -312,10 +254,10 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>270</x>
-      <y>530</y>
+      <x>540</x>
+      <y>260</y>
       <w>20</w>
-      <h>200</h>
+      <h>360</h>
     </coordinates>
     <panel_attributes>
 bg=red</panel_attributes>
