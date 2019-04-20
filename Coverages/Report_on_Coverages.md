@@ -19,3 +19,18 @@ In this file are presented the coverages that junit tests achieved:
 4. Request Class:      
 
 ![](Request_Coverages.JPG)
+
+
+5. House Class:
+
+![](HouseCoverageReport.png)
+
+
+6. Owner Class:
+
+![](OwnerCoverageReport.png)
+
+
+1. Renter Class:
+
+![](RenterCoverageReport.png)
