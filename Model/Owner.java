@@ -2,29 +2,27 @@ import java.util.*;
 
 public class Owner extends User{
     private int numOfOwners;
-    private ArrayList<Owner> listOwner = new  ArrayList<>();
-    private ArrayList<House> listHouse = new  ArrayList<>();
+    private static ArrayList<Owner> listOwner = new  ArrayList<>();
+    private static ArrayList<House> listHouse = new  ArrayList<>();
 
 
-    Owner(long id, String firstName, String lastName, String email, String IBAN, String username, String password){
-        super(id,firstName,lastName,email,IBAN,username,password);
+    Owner(String firstName, String lastName, String email, String IBAN, String username, String password){
+        super(firstName,lastName,email,IBAN,username,password);
         listOwner.add(this);
     }
 
-    public int getNumOfOwners() {
+    public static int getNumOfOwners() {
         return listOwner.size();
     }
 
-    public void addHouse(House house){
-        listHouse.add(house);
+    public void remove(){
+        listOwner.remove(this);
     }
 
-    public void removeHouse(House house){
-        listHouse.remove(house);
+    public static void removeAll() {
+    	listOwner.clear();
     }
-
-    public void remove(Owner owner){
-        listOwner.remove(owner);
-    }
-
+    
+    
+    
 }
