@@ -31,6 +31,6 @@ In this file are presented the coverages that junit tests achieved:
 ![](OwnerCoverageReport.png)
 
 
-1. Renter Class:
+7. Renter Class:
 
 ![](RenterCoverageReport.png)
