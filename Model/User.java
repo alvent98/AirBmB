@@ -11,10 +11,8 @@ public abstract class User {
     private String password;
 
 
-    User(){}
 
-    User(long id, String firstName, String lastName, String email, String IBAN, String username, String password){
-        this.id=id;
+    User(String firstName, String lastName, String email, String IBAN, String username, String password){
         this.firstName=firstName;
         this.lastName=lastName;
         this.email=email;
@@ -25,10 +23,6 @@ public abstract class User {
 
     public long getId(){
         return id;
-    }
-
-    public void setId(long id){
-        this.id=id;
     }
 
     public void setFirstName(String firstName){
@@ -75,7 +69,31 @@ public abstract class User {
         this.password = password;
     }
 
-    public void remove(User user){};
+    public void remove(User user){}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	};
+
+    
+    
 
 }

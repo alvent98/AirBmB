@@ -15,12 +15,7 @@ public class House {
     private static double averagePrice;
     private static ArrayList<House> listHouses = new ArrayList<>();
 
-
-
-    House(){}
-
-    House(long id, String city, String street, int number, int area, String floor, String rooms, double price){
-        this.id=id;
+    House(String city, String street, int number, int area, String floor, String rooms, double price){
         this.city=city;
         this.street=street;
         this.number=number;
@@ -28,6 +23,7 @@ public class House {
         this.floor=floor;
         this.rooms=rooms;
         this.price=price;
+        listHouses.add(this);
     }
 
     public long getId(){
@@ -90,7 +86,7 @@ public class House {
         this.price = price;
     }
 
-    public int getNumOfHouses() {
+    public static int getNumOfHouses() {
         return listHouses.size();
     }
 
@@ -109,7 +105,36 @@ public class House {
         averagePrice= sum/listHouses.size();
         return averagePrice;
     }
+    
+    public static void removeAll() {
+    	listHouses.clear();
+    }
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		House other = (House) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+
+	public void remove() {
+		listHouses.remove(this);
+	}
+  
 
 }
