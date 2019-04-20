@@ -28,7 +28,7 @@ In this file are presented the coverages that junit tests achieved:
 
 6. Owner Class:
 
-![](OwnerCoverageReport.png)
+![](owner_Coverage_Report.png)
 
 
 7. Renter Class:
