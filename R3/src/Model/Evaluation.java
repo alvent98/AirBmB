@@ -1,7 +1,8 @@
-import java.util.Random;
+package Model;
 
 public abstract class Evaluation {
-    private long evaluationId = new Random().nextLong();
+	private static int num=0;
+    private int evaluationId ;
     private int feedback;
     private String comments;
 
@@ -10,13 +11,14 @@ public abstract class Evaluation {
     public Evaluation(int feedback, String comments) {
         this.feedback = feedback;
         this.comments = comments;
+		evaluationId=num++;
     }
     
     public Evaluation(int feedback) {
     	this(feedback,"");
     }
 
-    public long getEvaluationId() { return evaluationId; }
+    public int getEvaluationId() { return evaluationId; }
 
     public int getFeedback() { return feedback; }
 

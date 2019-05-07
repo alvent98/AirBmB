@@ -1,8 +1,9 @@
-import java.util.Random;
+package Model;
+
 
 public abstract class User {
-    Random random = new Random();
-    private long id = (long)random.nextInt() + (long) (1L << 31);
+    private static int num=0;
+    private int id;
     private String firstName;
     private String lastName;
     private String email;
@@ -12,16 +13,17 @@ public abstract class User {
 
 
 
-    User(String firstName, String lastName, String email, String IBAN, String username, String password){
+    public User(String firstName, String lastName, String email, String IBAN, String username, String password){
         this.firstName=firstName;
         this.lastName=lastName;
         this.email=email;
         this.IBAN=IBAN;
         this.username=username;
         this.password=password;
+        id=num++;
     }
 
-	public long getId(){
+	public int getId(){
         return id;
     }
 

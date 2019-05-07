@@ -1,3 +1,6 @@
+package Test;
+
+import Model.Owner;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Assert;

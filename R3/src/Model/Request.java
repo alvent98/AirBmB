@@ -1,9 +1,11 @@
+package Model;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Request {
-    private long requestId = new Random().nextLong();
+	private static int num=0;
+    private int requestId;
     private LocalDate submissionDate;
     private LocalDate startDate;
     private LocalDate endDate;
@@ -15,6 +17,7 @@ public class Request {
         this.submissionDate = submissionDate;
         this.startDate = startDate;
         this.endDate = endDate;
+        requestId = num++;
         requestList.add(this);
     }
 

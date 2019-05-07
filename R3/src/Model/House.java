@@ -1,9 +1,11 @@
+package Model;
+
 import java.util.*;
 
 public class House {
 
-    Random random = new Random();
-    private long id = (long)random.nextInt() + (long) (1L << 31);
+    private static int num=0;
+    private int id ;
     private String city;
     private String street;
     private int number;
@@ -15,7 +17,7 @@ public class House {
     private static double averagePrice;
     private static ArrayList<House> listHouses = new ArrayList<>();
 
-    House(String city, String street, int number, int area, String floor, String rooms, double price){
+    public House(String city, String street, int number, int area, String floor, String rooms, double price){
         this.city=city;
         this.street=street;
         this.number=number;
@@ -23,10 +25,11 @@ public class House {
         this.floor=floor;
         this.rooms=rooms;
         this.price=price;
+        id=num++;
         listHouses.add(this);
     }
 
-    public long getId(){
+    public int getId(){
         return id;
     }
 

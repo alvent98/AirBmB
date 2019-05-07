@@ -1,3 +1,6 @@
+package Test;
+
+import Model.House;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Assert;

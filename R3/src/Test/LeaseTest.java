@@ -1,3 +1,6 @@
+package Test;
+
+import Model.Lease;
 import java.time.Period;
 import java.util.ArrayList;
 

@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.*;
 
 public class Owner extends User{
@@ -6,7 +8,7 @@ public class Owner extends User{
     private static ArrayList<House> listHouse = new  ArrayList<>();
 
 
-    Owner(String firstName, String lastName, String email, String IBAN, String username, String password){
+    public Owner(String firstName, String lastName, String email, String IBAN, String username, String password){
         super(firstName,lastName,email,IBAN,username,password);
         listOwner.add(this);
     }
