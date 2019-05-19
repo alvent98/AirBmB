@@ -1,4 +1,5 @@
 package com.example.airbmb.Model;
+//package Model; //This is the possible declaration for android studio.
 
 import java.util.*;
 

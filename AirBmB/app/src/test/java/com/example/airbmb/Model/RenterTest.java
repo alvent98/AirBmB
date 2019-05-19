@@ -13,9 +13,9 @@ public class RenterTest {
 
     @Test
     public void testRenter() {
-        Renter R1=new Renter ("firstName","lastName","email","IBAN","username","password");
-        Renter R2=new Renter ("firstName","lastName","email","IBAN","username","password");
-        Renter R3=new Renter ("firstName","lastName","email","IBAN","username","password");
+        new Renter ("firstName","lastName","email","IBAN","username","password");
+        new Renter ("firstName","lastName","email","IBAN","username","password");
+        new Renter ("firstName","lastName","email","IBAN","username","password");
         Assert.assertEquals(3,Renter.getNumOfRenters());
     }
 
@@ -29,7 +29,7 @@ public class RenterTest {
     @Test
     public void testRemoveRenter2() {
         Renter R1=new Renter ("firstName","lastName","email","IBAN","username","password");
-        Renter R2=new Renter ("firstName","lastName","email","IBAN","username","password");
+        new Renter ("firstName","lastName","email","IBAN","username","password");
         R1.remove();
         Assert.assertEquals(1,Renter.getNumOfRenters());
     }
@@ -37,7 +37,7 @@ public class RenterTest {
     @Test
     public void testRemoveRenter3() {
         Renter R1=new Renter ("firstName","lastName","email","IBAN","username","password");
-        Renter R2=new Renter ("firstName","lastName","email","IBAN","username","password");
+        new Renter ("firstName","lastName","email","IBAN","username","password");
         Renter.removeAll();
         R1.remove();
         Assert.assertEquals(0,Renter.getNumOfRenters());

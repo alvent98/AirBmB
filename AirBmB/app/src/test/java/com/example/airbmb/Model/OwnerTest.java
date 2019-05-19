@@ -13,9 +13,9 @@ public class OwnerTest {
 
     @Test
     public void testOwner() {
-        Owner o1=new Owner ("firstName","lastName","email","IBAN","username","password");
-        Owner o2=new Owner ("firstName","lastName","email","IBAN","username","password");
-        Owner o3=new Owner ("firstName","lastName","email","IBAN","username","password");
+        new Owner ("firstName","lastName","email","IBAN","username","password");
+        new Owner ("firstName","lastName","email","IBAN","username","password");
+        new Owner ("firstName","lastName","email","IBAN","username","password");
         Assert.assertEquals(3,Owner.getNumOfOwners());
     }
 
@@ -29,7 +29,7 @@ public class OwnerTest {
     @Test
     public void testRemoveRenter2() {
         Owner o1=new Owner ("firstName","lastName","email","IBAN","username","password");
-        Owner o2=new Owner ("firstName","lastName","email","IBAN","username","password");
+        new Owner ("firstName","lastName","email","IBAN","username","password");
         o1.remove();
         Assert.assertEquals(1,Owner.getNumOfOwners());
     }
@@ -37,7 +37,7 @@ public class OwnerTest {
     @Test
     public void testRemoveRenter3() {
         Owner o1=new Owner ("firstName","lastName","email","IBAN","username","password");
-        Owner o2=new Owner ("firstName","lastName","email","IBAN","username","password");
+        new Owner ("firstName","lastName","email","IBAN","username","password");
         Owner.removeAll();
         o1.remove();
         Assert.assertEquals(0,Owner.getNumOfOwners());

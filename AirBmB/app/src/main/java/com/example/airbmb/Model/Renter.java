@@ -1,10 +1,10 @@
 package com.example.airbmb.Model;
+//package Model; //This is the possible declaration for android studio.
 
 import java.util.*;
 
 public class Renter extends User {
 
-    private int numOfRenters;
     private static ArrayList<Renter> listRenter=new ArrayList<>();
 
     public Renter(String firstName, String lastName, String email, String IBAN, String username, String password){

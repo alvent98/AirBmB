@@ -1,7 +1,8 @@
 package com.example.airbmb.Model;
+//package Model; //This is the possible declaration for android studio.
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
+//import android.os.Build;
+//import android.support.annotation.RequiresApi;
 
 import java.util.*;
 
@@ -16,7 +17,6 @@ public class House {
     private String floor;
     private String rooms;
     private double price;
-    private static int numOfHouses;
     private static double averagePrice;
     private static ArrayList<House> listHouses = new ArrayList<>();
 
@@ -124,7 +124,7 @@ public class House {
         return id == house.id;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    //@RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public int hashCode() {
         return Objects.hash(id);

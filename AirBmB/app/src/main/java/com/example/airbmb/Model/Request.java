@@ -1,7 +1,8 @@
 package com.example.airbmb.Model;
+//package Model; //This is the possible declaration for android studio.
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
+//import android.os.Build;
+//import android.support.annotation.RequiresApi;
 
 import java.time.*;
 import java.util.*;
@@ -61,7 +62,7 @@ public class Request {
         return requestId == request.requestId;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+//    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public int hashCode() {
         return Objects.hash(requestId);

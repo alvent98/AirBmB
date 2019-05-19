@@ -1,7 +1,8 @@
 package com.example.airbmb.Model;
+//package Model; //This is the possible declaration for android studio.
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
+//import android.os.Build;
+//import android.support.annotation.RequiresApi;
 
 import java.util.Objects;
 
@@ -52,7 +53,7 @@ public abstract class Evaluation {
         return evaluationId == that.evaluationId;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+//    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public int hashCode() {
         return Objects.hash(evaluationId);

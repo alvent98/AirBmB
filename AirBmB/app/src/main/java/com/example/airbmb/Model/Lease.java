@@ -1,12 +1,13 @@
 package com.example.airbmb.Model;
+//package Model; //This is the possible declaration for android studio.
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
+//import android.os.Build;
+//import android.support.annotation.RequiresApi;
 
 import java.time.*;
 import java.util.*;
 
-@RequiresApi(api = Build.VERSION_CODES.O)
+//@RequiresApi(api = Build.VERSION_CODES.O)
 public class Lease {
     private long leaseId = new Random().nextLong();
     private Period duration;

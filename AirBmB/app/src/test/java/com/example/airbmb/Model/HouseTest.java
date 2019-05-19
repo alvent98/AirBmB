@@ -13,9 +13,9 @@ public class HouseTest {
 
     @Test
     public void testHouse() {
-        House h1 = new House("city","street", 12, 100, "2", "2", 200);
-        House h2 = new House("city","street", 12, 100, "2", "2", 200);
-        House h3 = new House("city","street", 12, 100, "2", "2", 200);
+        new House("city","street", 12, 100, "2", "2", 200);
+        new House("city","street", 12, 100, "2", "2", 200);
+        new House("city","street", 12, 100, "2", "2", 200);
         Assert.assertEquals(3,House.getNumOfHouses());
     }
 
@@ -65,10 +65,10 @@ public class HouseTest {
 
     @Test
     public void testGetAveragePrice() {
-        House h1 = new House("city","Backer Street", 12, 100, "2", "2", 1500);
-        House h2 = new House("city","Backer Street", 12, 100, "2", "2", 3000);
-        House h3 = new House("city","Backer Street", 12, 100, "2", "2", 4500);
-        House h4 = new House("city","Backer Street", 12, 100, "2", "2", 6000);
+        new House("city","Backer Street", 12, 100, "2", "2", 1500);
+        new House("city","Backer Street", 12, 100, "2", "2", 3000);
+        new House("city","Backer Street", 12, 100, "2", "2", 4500);
+        new House("city","Backer Street", 12, 100, "2", "2", 6000);
         Assert.assertEquals(3750,House.getAveragePrice(),0.001);
     }
 
