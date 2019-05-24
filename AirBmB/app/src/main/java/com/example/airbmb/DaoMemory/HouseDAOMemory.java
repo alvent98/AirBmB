@@ -1,7 +1,6 @@
 package com.example.airbmb.DaoMemory;
 
 import java.util.ArrayList;
-import java.util.List;
 import com.example.airbmb.Dao.HouseDAO;
 import com.example.airbmb.Model.House;
 
@@ -12,7 +11,7 @@ public class HouseDAOMemory implements HouseDAO {
         houseList.remove(entity);
     }
     
-    public List<House> findAll() {
+    public ArrayList<House> findAll() {
         ArrayList<House> result = new ArrayList<House>();
         result.addAll(houseList);
         return result;
@@ -30,9 +29,9 @@ public class HouseDAOMemory implements HouseDAO {
     }
 
     @Override
-    public List<House> findByCity(String city) {
+    public ArrayList<House> findByCity(String city) {
 
-        List<House> result = new ArrayList<>();
+        ArrayList<House> result = new ArrayList<>();
 
         if (city != null) {
             for (House h : houseList) {
@@ -45,9 +44,9 @@ public class HouseDAOMemory implements HouseDAO {
     }
 	
 	@Override
-    public List<House> findByStreet(String street) {
+    public ArrayList<House> findByStreet(String street) {
 
-        List<House> result = new ArrayList<>();
+        ArrayList<House> result = new ArrayList<>();
 
         if (street != null) {
             for (House h : houseList) {
@@ -60,8 +59,8 @@ public class HouseDAOMemory implements HouseDAO {
     }
 	
 	@Override
-    public List<House> findByArea(int area) {
-        List<House> result = new ArrayList<>();
+    public ArrayList<House> findByArea(int area) {
+        ArrayList<House> result = new ArrayList<>();
         
         for (House h : houseList) if(Math.abs(h.getArea() - area) < 15) result.add(h);
 
@@ -69,17 +68,17 @@ public class HouseDAOMemory implements HouseDAO {
     }
 		
 	@Override
-    public List<House> findByRooms(String rooms) {
-        List<House> result = new ArrayList<>();
+    public ArrayList<House> findByRooms(int rooms) {
+        ArrayList<House> result = new ArrayList<>();
         
-        for (House h : houseList) if(h.getRooms().equalsIgnoreCase(rooms)) result.add(h);
+        for (House h : houseList) if(h.getRooms()==rooms) result.add(h);
         
         return result;
     }
 
 	@Override
-    public List<House> findByPrice(double price) {
-        List<House> result = new ArrayList<>();
+    public ArrayList<House> findByPrice(int price) {
+        ArrayList<House> result = new ArrayList<>();
 
         for (House h : houseList) if(Math.abs(h.getPrice() - price) < 30) result.add(h);
          
@@ -87,19 +86,19 @@ public class HouseDAOMemory implements HouseDAO {
     }
 	
 	@Override
-    public List<House> findByFloor(String floor) {
-        List<House> result = new ArrayList<>();
+    public ArrayList<House> findByFloor(int floor) {
+        ArrayList<House> result = new ArrayList<>();
 
-        for (House h : houseList) if(h.getFloor().equalsIgnoreCase(floor)) result.add(h);
+        for (House h : houseList) if(h.getFloor()==floor) result.add(h);
         
         return result;
     }
 	
 	@Override
-    public List<House> findByOwner(int ownerId) {
-        List<House> result = new ArrayList<>();
+    public ArrayList<House> findByOwner(int ownerId) {
+        ArrayList<House> result = new ArrayList<>();
         
-        for (House h : houseList) if (h.getId()==ownerId) result.add(h);
+        for (House h : houseList) if (h.getOwner().getId()==ownerId) result.add(h);
         
         return result;
     }

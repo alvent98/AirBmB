@@ -1,45 +1,61 @@
 package com.example.airbmb.View.Renter.RenterDetails;
 
-import com.example.airbmb.View.UserDetailsView;
-//import com.example.airbmb.dao.RenterDAO;
+import java.util.ArrayList;
+
+import com.example.airbmb.Dao.LeaseDAO;
+import com.example.airbmb.Dao.RenterDAO;
+import com.example.airbmb.Model.Lease;
 import com.example.airbmb.Model.Renter;
+import com.example.airbmb.View.User.UserDetailsView;
 
 public class RenterDetailsPresenter
 {
     private UserDetailsView view;
+    private RenterDAO renters;
+    private LeaseDAO leases;
     private Renter attachedRenter;
 
-    public RenterDetailsPresenter(UserDetailsView view, RenterDAO publishers)
+    public RenterDetailsPresenter(UserDetailsView view, RenterDAO renters)
     {
         this.view = view;
+        this.renters = renters;
 
-        attachedRenter = publishers.find(view.getId());
+        attachedRenter = renters.find(view.getAttachedUserId());
 
-        view.setPageName("Εκδοτικ�?ς �?ίκος #" + attachedRenter.getId());
-
-        view.setID("#"+attachedRenter.getId());
-        view.setName(attachedRenter.getName());
-        view.setPhone(attachedRenter.getTelephone().getTelephoneNumber());
-        view.setEmail(attachedRenter.getEMail().getAddress());
-
-        int booksPublished = attachedRenter.getBooks().size();
-        view.setBooksPublished(booksPublished+" "+(booksPublished == 1 ? "Βιβλίο" : "Βιβλία"));
-
-        view.setCountry(attachedRenter.getAddress().getCountry());
-        view.setAddressCity(attachedRenter.getAddress().getCity());
-        view.setAddressStreet(attachedRenter.getAddress().getStreet());
-        view.setAddressNumber(attachedRenter.getAddress().getNumber());
-        view.setAddressPostalCode(attachedRenter.getAddress().getZipCode().getCode());
+        view.setPageName("Renter No " + attachedRenter.getId());
+        view.setFirstName(attachedRenter.getFirstName());
+        view.setLastName(attachedRenter.getLastName());
+        view.setEmail(attachedRenter.getEmail());
+        view.setIBAN(attachedRenter.getIBAN());
+        view.setUsername(attachedRenter.getUsername());
+        view.setPassword(attachedRenter.getPassword());
     }
 
     void onStartEditButtonClick()
     {
         view.startEdit(attachedRenter.getId());
     }
-
-    void onStartShowBooksButtonClick()
+    
+    void onStartDeleteButtonClick()
     {
-        view.startShowHouses(attachedRenter.getId());
+        view.startDelete("Renter Delete","All houses occupied will be unleased.");
+    }
+
+    void onDoDeleteAndFinish()
+    {
+
+        String msg = "Successful delete of renter "+attachedRenter.getLastName()+" "+ attachedRenter.getFirstName()+"'!";
+
+        ArrayList<Lease> results = leases.findLeaseByRenter(view.getAttachedUserId());
+        for(Lease l : results)
+        {
+        	leases.delete(l);
+        }
+
+        renters.delete(attachedRenter);
+        attachedRenter = null;
+
+        view.doDeleteAndFinish(msg);
     }
 
     void onShowToast(String value)

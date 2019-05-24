@@ -21,8 +21,8 @@ public class OwnerTest {
 
     @Test
     public void testRemoveRenter() {
-        Owner o1=new Owner ("firstName","lastName","email","IBAN","username","password");
-        o1.remove();
+        Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        o.remove();
         Assert.assertEquals(0,Owner.getNumOfOwners());
     }
 

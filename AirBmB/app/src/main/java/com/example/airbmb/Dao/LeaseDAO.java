@@ -1,6 +1,7 @@
 package com.example.airbmb.Dao;
 
 import java.time.Period;
+import java.util.ArrayList;
 import java.util.List;
 import com.example.airbmb.Model.Lease;
 
@@ -16,8 +17,12 @@ public interface LeaseDAO
 
     int nextId();
     
-	List<Lease> findLeaseByDuration(Period duration);
+	ArrayList<Lease> findLeaseByDuration(Period duration);
 	
-	List<Lease> findLeaseByCost(double cost);
+	ArrayList<Lease> findLeaseByCost(double cost);
+	
+	ArrayList<Lease> findLeaseByRenter(int id);
+	
+	ArrayList<Lease> findLeaseByOnwer(int id);
 	
 }

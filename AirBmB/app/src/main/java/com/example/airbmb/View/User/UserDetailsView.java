@@ -1,9 +1,10 @@
-package com.example.airbmb.View;
+package com.example.airbmb.View.User;
 
 public interface UserDetailsView
 {
-	String getId();
+	int getAttachedUserId();
 
+	void setId(int id);
 	void setFirstName(String firstName);    
     void setLastName(String lastName);
     void setEmail(String email);    
@@ -13,9 +14,11 @@ public interface UserDetailsView
 
     void setPageName(String value);
 
-    void startEdit(int publisherID);
+    void startEdit(int renterID);
 
-    void startShowHouses(int publisherID);
+    void startDelete(String title, String msg);
 
+    void doDeleteAndFinish(String msg);
+    
     void showToast(String value);
 }

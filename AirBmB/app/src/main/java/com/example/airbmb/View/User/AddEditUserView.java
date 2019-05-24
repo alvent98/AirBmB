@@ -1,8 +1,8 @@
-package com.example.airbmb.View;
+package com.example.airbmb.View.User;
 
 public interface AddEditUserView
 {
-	String getId();
+	int getAttachedUserId();
 	String getFirstName();
 	String getLastName();
     String getEmail();

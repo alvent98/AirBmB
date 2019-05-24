@@ -1,6 +1,6 @@
 package com.example.airbmb.Dao;
 
-import java.util.List;
+import java.util.ArrayList;
 import com.example.airbmb.Model.House;
 
 
@@ -8,7 +8,7 @@ public interface HouseDAO
 {    
     void delete(House entity);
   
-    List<House> findAll();
+    ArrayList<House> findAll();
    
     void save(House entity);
     
@@ -16,11 +16,11 @@ public interface HouseDAO
 
     int nextId();	
 	
-	List<House> findByCity(String city);
-	List<House> findByStreet(String street);
-	List<House> findByArea(int area);
-	List<House> findByRooms(String rooms);
-	List<House> findByPrice(double price);
-	List<House> findByFloor(String floor);
-	List<House> findByOwner(int onwerId);	  
+	ArrayList<House> findByCity(String city);
+	ArrayList<House> findByStreet(String street);
+	ArrayList<House> findByArea(int area);
+	ArrayList<House> findByRooms(int rooms);
+	ArrayList<House> findByPrice(int price);
+	ArrayList<House> findByFloor(int floor);
+	ArrayList<House> findByOwner(int onwerId);
 }

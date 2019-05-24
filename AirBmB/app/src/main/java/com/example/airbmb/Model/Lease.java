@@ -4,17 +4,22 @@ import java.time.Period;
 import java.util.*;
 
 public class Lease {
-    private int leaseId = new Random().nextInt();
+	private static int num=0; 
+	private Renter renter;
+	private Owner owner;
+	private int leaseId;
     private Period duration;
     private double cost;
-    private static ArrayList<Lease> leaseList = new ArrayList<Lease>();
     private static Period averageDuration = Period.ZERO;
+	private static ArrayList<Lease> leaseList = new ArrayList<Lease>();
 
-    public Lease(Period duration, double cost) {
+    public Lease(Period duration, double cost, Renter renter, Owner owner) {
         duration = duration.normalized();
         this.duration = duration;
         this.cost = cost;
-        leaseList.add(this);
+        this.renter = renter;
+        this.owner = owner;
+        leaseId = num++;
         recalculateAverage();
     }
 
@@ -40,21 +45,42 @@ public class Lease {
     }
 
     public static int getNumOfLeases() {
-        return leaseList.size();
+        return leaseList .size();
     }
 
     public static Period getAverageDuration() {
         return averageDuration;
     }
 
-    public void remove() {
-        if (!leaseList.isEmpty()) {
-            leaseList.remove(this);
-            recalculateAverage();
-        }
-    }
+    /**
+	 * @return the renter
+	 */
+	public Renter getRenter() {
+		return renter;
+	}
 
-    private static void recalculateAverage() {
+	/**
+	 * @param renter the renter to set
+	 */
+	public void setRenter(Renter renter) {
+		this.renter = renter;
+	}
+
+	/**
+	 * @return the owner
+	 */
+	public Owner getOwner() {
+		return owner;
+	}
+
+	/**
+	 * @param owner the owner to set
+	 */
+	public void setOwner(Owner owner) {
+		this.owner = owner;
+	}
+
+	private static void recalculateAverage() {
         if (!leaseList.isEmpty()) {
             Period sum = Period.ZERO;
             int num = getNumOfLeases();
@@ -112,6 +138,10 @@ public class Lease {
             if (l.getCost() == cost) returnedLeases.add(l);
         }
         return returnedLeases;
+    }
+    
+    public void remove() {
+    	leaseList.remove(this);
     }
 
     public static void removeAll() {

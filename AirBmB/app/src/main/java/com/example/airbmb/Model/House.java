@@ -10,13 +10,15 @@ public class House {
     private String street;
     private int number;
     private int area;
-    private String floor;
-    private String rooms;
-    private double price;
+    private int floor;
+    private int rooms;
+    private int price;
+    private Owner owner;
     private static double averagePrice;
     private static ArrayList<House> listHouses = new ArrayList<>();
 
-    public House(String city, String street, int number, int area, String floor, String rooms, double price){
+    public House(String city, String street, int number, int area, int floor, int rooms, 
+    		int price,Owner owner){
         this.city=city;
         this.street=street;
         this.number=number;
@@ -24,6 +26,7 @@ public class House {
         this.floor=floor;
         this.rooms=rooms;
         this.price=price;
+        this.owner=owner;
         id=num++;
         listHouses.add(this);
     }
@@ -64,27 +67,27 @@ public class House {
         this.area = area;
     }
 
-    public String getFloor() {
+    public int getFloor() {
         return floor;
     }
 
-    public void setFloor(String floor) {
+    public void setFloor(int floor) {
         this.floor = floor;
     }
 
-    public String getRooms() {
+    public int getRooms() {
         return rooms;
     }
 
-    public void setRooms(String rooms) {
+    public void setRooms(int rooms) {
         this.rooms = rooms;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -129,5 +132,13 @@ public class House {
     public void remove() {
         listHouses.remove(this);
     }
+
+	public Owner getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Owner owner) {
+		this.owner = owner;
+	}
 
 }

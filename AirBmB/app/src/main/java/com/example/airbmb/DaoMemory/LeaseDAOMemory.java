@@ -31,7 +31,7 @@ public class LeaseDAOMemory implements LeaseDAO {
     }
 
    @Override
-    public List<Lease> findLeaseByDuration(Period duration) {
+    public ArrayList<Lease> findLeaseByDuration(Period duration) {
 		ArrayList<Lease> returnedLeases = new ArrayList<Lease>();
         duration = duration.normalized();
         for (Lease l : leaseList) {
@@ -41,8 +41,8 @@ public class LeaseDAOMemory implements LeaseDAO {
     }
 	
    @Override
-    public  List<Lease> findLeaseByCost(double cost) {
-        List<Lease> returnedLeases = new ArrayList<Lease>();
+    public  ArrayList<Lease> findLeaseByCost(double cost) {
+	   ArrayList<Lease> returnedLeases = new ArrayList<Lease>();
         for (Lease l : leaseList) {
             if (l.getCost() == cost) returnedLeases.add(l);
         }
@@ -54,4 +54,22 @@ public class LeaseDAOMemory implements LeaseDAO {
     {
         return (leaseList.size() > 0 ? leaseList.get(leaseList.size()-1).getLeaseId()+1 : 1);
     }
+
+	@Override
+	public ArrayList<Lease> findLeaseByRenter(int id) {
+		ArrayList<Lease> returnedLeases = new ArrayList<Lease>();
+        for (Lease l : leaseList) {
+            if (l.getRenter().getId()==id) returnedLeases.add(l);
+        }
+        return returnedLeases;
+	}
+
+	@Override
+	public ArrayList<Lease> findLeaseByOnwer(int id) {
+		ArrayList<Lease> returnedLeases = new ArrayList<Lease>();
+        for (Lease l : leaseList) {
+            if (l.getOwner().getId()==id) returnedLeases.add(l);
+        }
+        return returnedLeases;
+	}
 }

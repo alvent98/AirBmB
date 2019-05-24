@@ -13,44 +13,50 @@ public class HouseTest {
 
     @Test
     public void testHouse() {
-        new House("city","street", 12, 100, "2", "2", 200);
-        new House("city","street", 12, 100, "2", "2", 200);
-        new House("city","street", 12, 100, "2", "2", 200);
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        new House("city","street", 12, 100, 2, 2, 200,o);
+        new House("city","street", 12, 100, 2, 2, 200,o);
+        new House("city","street", 12, 100, 2, 2, 200,o);
         Assert.assertEquals(3,House.getNumOfHouses());
     }
 
     @Test
     public void testSetNumber() {
-        House h1 = new House("city","street", 12, 100, "2", "2", 200);
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        House h1 = new House("city","street", 12, 100, 2, 2, 200,o);
         h1.setNumber(25);
         Assert.assertEquals(25, h1.getNumber());
     }
 
     @Test
     public void testSetArea() {
-        House h1 = new House("city","street", 12, 100, "2", "2", 200);
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        House h1 = new House("city","street", 12, 100, 2, 2, 200,o);
         h1.setArea(250);
         Assert.assertEquals(250, h1.getArea());
     }
 
     @Test
     public void testSetPrice() {
-        House h1 = new House("city","street", 12, 100, "2", "2", 200);
-        h1.setPrice(350.60);
-        Assert.assertEquals(350.60, h1.getPrice(),0.01);
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        House h1 = new House("city","street", 12, 100, 2, 2, 200,o);
+        h1.setPrice(350);
+        Assert.assertEquals(350, h1.getPrice());
     }
 
     @Test
     public void testEqualsFalse() {
-        House h1 = new House("city","street", 12, 100, "2", "2", 200);
-        House h2 = new House("city","street", 12, 100, "2", "2", 200);
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        House h1 = new House("city","street", 12, 100, 2, 2, 200,o);
+        House h2 = new House("city","street", 12, 100, 2, 2, 200,o);
         h1.setCity("lalaland");
         Assert.assertFalse(h1.equals(h2));
     }
 
     @Test
     public void testEqualsTrue() {
-        House h1 = new House("city","Backer Street", 12, 100, "2", "2", 200);
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        House h1 = new House("city","Backer Street", 12, 100, 2, 2, 200,o);
         House h2=h1;
         Assert.assertEquals(h1.hashCode(),h2.hashCode());
         Assert.assertTrue(h1.equals(h2));
@@ -58,23 +64,26 @@ public class HouseTest {
 
     @Test
     public void testEqualsNull() {
-        House h1 = new House("city","Backer Street", 12, 100, "2", "2", 200);
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        House h1 = new House("city","Backer Street", 12, 100,2, 2, 200,o);
         House h2=null;
         Assert.assertFalse(h1.equals(h2));
     }
 
     @Test
     public void testGetAveragePrice() {
-        new House("city","Backer Street", 12, 100, "2", "2", 1500);
-        new House("city","Backer Street", 12, 100, "2", "2", 3000);
-        new House("city","Backer Street", 12, 100, "2", "2", 4500);
-        new House("city","Backer Street", 12, 100, "2", "2", 6000);
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        new House("city","Backer Street", 12, 100,2, 2, 1500,o);
+        new House("city","Backer Street", 12, 100,2, 2, 3000,o);
+        new House("city","Backer Street", 12, 100, 2, 2, 4500,o);
+        new House("city","Backer Street", 12, 100, 2, 2, 6000,o);
         Assert.assertEquals(3750,House.getAveragePrice(),0.001);
     }
 
     @Test
     public void testGetAveragePriceWithNoHouses() {
-        House h1 = new House("city","Backer Street", 12, 100, "2", "2", 1500);
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        House h1 = new House("city","Backer Street", 12, 100, 2, 2, 1500,o);
         h1.remove();
         Assert.assertEquals(0,House.getAveragePrice(),0.001);
     }
@@ -82,14 +91,16 @@ public class HouseTest {
 
     @Test
     public void testRemoveOneObj() {
-        House h1 = new House("city","Backer Street", 12, 100, "2", "2", 200);
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        House h1 = new House("city","Backer Street", 12, 100, 2, 2, 200,o);
         h1.remove();
         Assert.assertEquals(0,House.getNumOfHouses());
     }
 
     @Test
     public void testRemoveNoObj() {
-        House h1 = new House("city","Backer Street", 12, 100, "2", "2", 200);
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        House h1 = new House("city","Backer Street", 12, 100, 2, 2, 200,o);
         h1.remove();
         h1.remove();
         Assert.assertEquals(0,House.getNumOfHouses());
