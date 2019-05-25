@@ -1,6 +1,6 @@
 package com.example.airbmb.Model;
 
-import java.util.*;
+import java.util.Objects;
 
 /**
  * The House
@@ -18,9 +18,7 @@ public class House {
     private int rooms;
     private int price;
     private Owner owner;
-    private static double averagePrice;
-    private static ArrayList<House> listHouses = new ArrayList<>();
-
+    
     /**
      * Constructor the initializes the main characteristics of a House
      * @param city the city where the House is located
@@ -32,7 +30,6 @@ public class House {
      * @param price price of every day of staying at the house
      * @param owner House's owner
      */
-
     public House(String city, String street, int number, int area, int floor, int rooms, 
     		int price,Owner owner){
         this.city=city;
@@ -44,7 +41,6 @@ public class House {
         this.price=price;
         this.owner=owner;
         id=num++;
-        listHouses.add(this);
     }
 
     /**
@@ -168,30 +164,6 @@ public class House {
         this.price = price;
     }
 
-    public static int getNumOfHouses() {
-        return listHouses.size();
-    }
-
-    public static double getAveragePrice() {
-        if (listHouses.size() == 0){
-            System.out.println("There are no registered houses yet.");
-            return 0;
-        } //controller
-
-        double sum = 0;
-
-        for(House h : listHouses){
-            sum += h.getPrice();
-        }
-
-        averagePrice= sum/listHouses.size();
-        return averagePrice;
-    }
-
-    public static void removeAll() {
-        listHouses.clear();
-    }
-
     /**
      * This method tests if two objects are equal.
      * @param o the object to be tested
@@ -214,10 +186,6 @@ public class House {
         return Objects.hash(id);
     }
 
-    public void remove() {
-        listHouses.remove(this);
-    }
-
     /**
      * Returns object Owner
      * @return owner House's owner
@@ -233,5 +201,4 @@ public class House {
 	public void setOwner(Owner owner) {
 		this.owner = owner;
 	}
-
 }

@@ -45,10 +45,10 @@ public class HouseTest {
         h1.remove();
         h1.remove();
         Assert.assertEquals(0,House.getNumOfHouses());
+        
     }
-    */
-
-    @Test
+    
+        @Test
     public void testHouse() {
     	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
         new House("city","street", 12, 100, 2, 2, 200,o);
@@ -56,8 +56,9 @@ public class HouseTest {
         new House("city","street", 12, 100, 2, 2, 200,o);
         Assert.assertEquals(3,House.getNumOfHouses());
     }
-
-    @Test
+    */
+	
+	@Test
     public void testSetNumber() {
     	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
         House h1 = new House("city","street", 12, 100, 2, 2, 200,o);

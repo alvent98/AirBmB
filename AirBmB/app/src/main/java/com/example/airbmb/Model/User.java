@@ -25,7 +25,6 @@ public class User {
      * @param username Username
      * @param password Password
      */
-
     public User(String firstName, String lastName, String email, String IBAN, String username, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -141,13 +140,7 @@ public class User {
     public String getPassword() {
         return password;
     }
-
-    /**
-     * Removes user from the list
-     * @param user User
-     */
-    public void remove(User user) {}
-
+    
     /**
      * This method tests if two objects are equal.
      * @param o the object to be tested
