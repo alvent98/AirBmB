@@ -2,6 +2,10 @@ package com.example.airbmb.Model;
 
 import java.util.*;
 
+/**
+ * The House
+ */
+
 public class House {
 
     private static int num=0;
@@ -17,6 +21,18 @@ public class House {
     private static double averagePrice;
     private static ArrayList<House> listHouses = new ArrayList<>();
 
+    /**
+     * Constructor the initializes the main characteristics of a House
+     * @param city the city where the House is located
+     * @param street the street where the House is located
+     * @param number number of House's address
+     * @param area size of the house
+     * @param floor the floor where the house is
+     * @param rooms number of rooms
+     * @param price price of every day of staying at the house
+     * @param owner House's owner
+     */
+
     public House(String city, String street, int number, int area, int floor, int rooms, 
     		int price,Owner owner){
         this.city=city;
@@ -31,62 +47,123 @@ public class House {
         listHouses.add(this);
     }
 
+    /**
+     * Returns house's ID
+     * House's ID is unique for every House
+     * @return id
+     */
     public int getId(){
         return id;
     }
 
+    /**
+     * Returns house's city
+     * @return city
+     */
     public String getCity() {
         return city;
     }
 
+    /**
+     * Sets house's city
+     * @param city the city where the House is located
+     */
     public void setCity(String city) {
         this.city = city;
     }
 
+    /**
+     * Returns house's street
+     * @return street
+     */
     public String getStreet(){
         return street;
     }
 
+    /**
+     * Sets house's street
+     * @param street the street where the House is located
+     */
     public void setStreet(String street) {
         this.street = street;
     }
 
+    /**
+     * Returns house's number (address)
+     * @return number
+     */
     public int getNumber() {
         return number;
     }
 
+    /**
+     * Sets house's number (address)
+     * @param number number of House's address
+     */
     public void setNumber(int number) {
         this.number = number;
     }
 
+    /**
+     * Returns house's area
+     * @return area
+     */
     public int getArea() {
         return area;
     }
 
+    /**
+     * Sets house's area
+     * @param area size of the house
+     */
     public void setArea(int area) {
         this.area = area;
     }
 
+    /**
+     * Returns number of house's floor
+     * @return floor
+     */
     public int getFloor() {
         return floor;
     }
 
+    /**
+     * Sets number of house's floor
+     * @param floor the floor where the house is
+     */
     public void setFloor(int floor) {
         this.floor = floor;
     }
 
+    /**
+     * Returns number of rooms
+     * @return rooms
+     */
     public int getRooms() {
         return rooms;
     }
 
+    /**
+     * Sets number of rooms
+     * @param rooms number of rooms
+     */
     public void setRooms(int rooms) {
         this.rooms = rooms;
     }
 
+    /**
+     * Returns house's price
+     * @return price
+     */
     public int getPrice() {
         return price;
     }
 
+    /**
+     * Sets house's price
+     * @param price price of every day of staying at the house
+     */
     public void setPrice(int price) {
         this.price = price;
     }
@@ -115,6 +192,11 @@ public class House {
         listHouses.clear();
     }
 
+    /**
+     * This method tests if two objects are equal.
+     * @param o the object to be tested
+     * @return true if the objects are equal
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -123,7 +205,10 @@ public class House {
         return id == house.id;
     }
 
-
+    /**
+     * This method generates a hash code for the id
+     * @return the hash code
+     */
     @Override
     public int hashCode() {
         return Objects.hash(id);
@@ -133,10 +218,18 @@ public class House {
         listHouses.remove(this);
     }
 
+    /**
+     * Returns object Owner
+     * @return owner House's owner
+     */
 	public Owner getOwner() {
 		return owner;
 	}
 
+    /**
+     * Sets House's owner
+     * @param owner House's owner
+     */
 	public void setOwner(Owner owner) {
 		this.owner = owner;
 	}

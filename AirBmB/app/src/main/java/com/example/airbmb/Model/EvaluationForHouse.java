@@ -2,15 +2,28 @@ package com.example.airbmb.Model;
 
 import java.util.*;
 
+/**
+ * Evaluation for a House
+ */
 public class EvaluationForHouse extends Evaluation {
 
     private static ArrayList<EvaluationForHouse> evaluationsForHousesList = new ArrayList<EvaluationForHouse>();
     private static double averageFeedbackForHouses = 0;
 
+    /**
+     * Constructor that initializes the rating
+     * The Renter rates the House with a score from 1 to 5
+     * @param feedback Renter's review
+     */
     public EvaluationForHouse(int feedback) {
         this(feedback,"");
     }
 
+    /**
+     * Constructor that initializes the characteristics of an evaluation for a house
+     * @param feedback Renter's rating for the House
+     * @param comments Renter's review for the House
+     */
     public EvaluationForHouse(int feedback, String comments) {
         super(feedback,comments);
         evaluationsForHousesList.add(this);
