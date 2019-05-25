@@ -13,8 +13,6 @@ public interface HouseDAO
     void save(House entity);
     
     House find(int HouseId);
-
-    int nextId();	
 	
 	ArrayList<House> findByCity(String city);
 	ArrayList<House> findByStreet(String street);

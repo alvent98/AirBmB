@@ -12,8 +12,6 @@ public interface OwnerDAO {
 	 
 	Owner find(int UserId);
 
-	int nextId();
-		
 	ArrayList<Owner> findByFirstName(String firstName);
 	ArrayList<Owner> findByLastName(String lastName);
 	ArrayList<Owner> findByEmail(String email);

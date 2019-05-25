@@ -1,56 +1,65 @@
 package com.example.airbmb.Model;
 
-import java.time.Period;
-import java.util.*;
+import java.time.LocalDate;
+import java.util.Objects;
 
 public class Lease {
 	private static int num=0; 
 	private Renter renter;
-	private Owner owner;
+	private House house;
 	private int leaseId;
-    private Period duration;
-    private double cost;
-    private static Period averageDuration = Period.ZERO;
-	private static ArrayList<Lease> leaseList = new ArrayList<Lease>();
+	private LocalDate startDate;
+	private LocalDate endDate;
+    private int cost;
 
-    public Lease(Period duration, double cost, Renter renter, Owner owner) {
-        duration = duration.normalized();
-        this.duration = duration;
+    public Lease(LocalDate startDate, LocalDate endDate, int cost, Renter renter, House house) {
+    	this.startDate = startDate;
+    	this.endDate = endDate;
         this.cost = cost;
         this.renter = renter;
-        this.owner = owner;
+        this.house = house;
         leaseId = num++;
-        recalculateAverage();
     }
 
     public int getLeaseId() {
         return leaseId;
     }
 
-    public void setDuration(Period duration) {
-        duration = duration.normalized();
-        this.duration = duration;
-    }
-
-    public Period getDuration() {
-        return duration;
-    }
-
-    public void setCost(double cost) {
+    public void setCost(int cost) {
         this.cost = cost;
     }
 
-    public double getCost() {
+    public int getCost() {
         return cost;
     }
+    
+    /**
+	 * @return the startDate
+	 */
+	public LocalDate getStartDate() {
+		return startDate;
+	}
 
-    public static int getNumOfLeases() {
-        return leaseList .size();
-    }
+	/**
+	 * @param startDate the startDate to set
+	 */
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
+	}
 
-    public static Period getAverageDuration() {
-        return averageDuration;
-    }
+	/**
+	 * @return the endDate
+	 */
+	public LocalDate getEndDate() {
+		return endDate;
+	}
+
+	/**
+	 * @param endDate the endDate to set
+	 */
+	public void setEndDate(LocalDate endDate) {
+		this.endDate = endDate;
+	}
 
     /**
 	 * @return the renter
@@ -67,86 +76,18 @@ public class Lease {
 	}
 
 	/**
-	 * @return the owner
+	 * @return the house
 	 */
-	public Owner getOwner() {
-		return owner;
+	public House getHouse() {
+		return house;
 	}
 
 	/**
-	 * @param owner the owner to set
+	 * @param house the house to set
 	 */
-	public void setOwner(Owner owner) {
-		this.owner = owner;
+	public void setHouse(House house) {
+		this.house = house;
 	}
-
-	private static void recalculateAverage() {
-        if (!leaseList.isEmpty()) {
-            Period sum = Period.ZERO;
-            int num = getNumOfLeases();
-            for (Lease l : leaseList) {
-                sum = sum.plusDays(l.getDuration().getDays());
-                sum = sum.plusMonths(l.getDuration().getMonths());
-                sum = sum.plusYears(l.getDuration().getYears());
-                sum = sum.normalized();
-            }
-            averageDuration = Period.of(sum.getYears() / num, sum.getMonths() / num, sum.getDays() / num);
-            averageDuration = averageDuration.normalized();
-        } else {
-            averageDuration = Period.ZERO;
-        }
-    }
-
-    public boolean similarWith(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Lease other = (Lease) obj;
-        if (cost != other.cost)
-            return false;
-        if (duration == null) {
-            if (other.duration != null)
-                return false;
-        } else if (!duration.equals(other.duration))
-            return false;
-        return true;
-    }
-
-
-    public static Lease findLeaseById(long id) {
-        for (Lease l : leaseList) {
-            if (l.getLeaseId() == id) return l;
-        }
-        return null;
-    }
-
-    public static ArrayList<Lease> findLeaseByDuration(Period duration) {
-        ArrayList<Lease> returnedLeases = new ArrayList<Lease>();
-        duration = duration.normalized();
-        for (Lease l : leaseList) {
-            if (l.getDuration().equals(duration)) returnedLeases.add(l);
-        }
-        return returnedLeases;
-    }
-
-    public static ArrayList<Lease> findLeaseByCost(double cost) {
-        ArrayList<Lease> returnedLeases = new ArrayList<Lease>();
-        for (Lease l : leaseList) {
-            if (l.getCost() == cost) returnedLeases.add(l);
-        }
-        return returnedLeases;
-    }
-    
-    public void remove() {
-    	leaseList.remove(this);
-    }
-
-    public static void removeAll() {
-        leaseList.clear();
-    }
 
     @Override
     public boolean equals(Object o) {

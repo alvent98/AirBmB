@@ -102,11 +102,4 @@ public class HouseDAOMemory implements HouseDAO {
         
         return result;
     }
- 
-	//I think it is useless in our case.
-    @Override
-    public int nextId()
-    {
-        return (houseList.size() > 0 ? houseList.get(houseList.size()-1).getId()+1 : 1);
-    }
 }

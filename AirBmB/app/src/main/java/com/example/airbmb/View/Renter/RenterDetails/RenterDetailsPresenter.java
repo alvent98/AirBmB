@@ -15,10 +15,11 @@ public class RenterDetailsPresenter
     private LeaseDAO leases;
     private Renter attachedRenter;
 
-    public RenterDetailsPresenter(UserDetailsView view, RenterDAO renters)
+    public RenterDetailsPresenter(UserDetailsView view, RenterDAO renters, LeaseDAO leases)
     {
         this.view = view;
         this.renters = renters;
+        this.leases = leases;
 
         attachedRenter = renters.find(view.getAttachedUserId());
 

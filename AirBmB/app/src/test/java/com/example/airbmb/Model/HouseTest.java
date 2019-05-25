@@ -1,15 +1,52 @@
 package com.example.airbmb.Model;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class HouseTest {
 
-    @Before
+    /*@Before This should go on DAO test
     public void set(){
         House.removeAll();
     }
+    
+    
+    @Test
+    public void testGetAveragePrice() {
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        new House("city","Backer Street", 12, 100,2, 2, 1500,o);
+        new House("city","Backer Street", 12, 100,2, 2, 3000,o);
+        new House("city","Backer Street", 12, 100, 2, 2, 4500,o);
+        new House("city","Backer Street", 12, 100, 2, 2, 6000,o);
+        Assert.assertEquals(3750,House.getAveragePrice(),0.001);
+    }
+
+    @Test
+    public void testGetAveragePriceWithNoHouses() {
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        House h1 = new House("city","Backer Street", 12, 100, 2, 2, 1500,o);
+        h1.remove();
+        Assert.assertEquals(0,House.getAveragePrice(),0.001);
+    }
+
+
+    @Test
+    public void testRemoveOneObj() {
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        House h1 = new House("city","Backer Street", 12, 100, 2, 2, 200,o);
+        h1.remove();
+        Assert.assertEquals(0,House.getNumOfHouses());
+    }
+
+    @Test
+    public void testRemoveNoObj() {
+    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
+        House h1 = new House("city","Backer Street", 12, 100, 2, 2, 200,o);
+        h1.remove();
+        h1.remove();
+        Assert.assertEquals(0,House.getNumOfHouses());
+    }
+    */
 
     @Test
     public void testHouse() {
@@ -69,41 +106,4 @@ public class HouseTest {
         House h2=null;
         Assert.assertFalse(h1.equals(h2));
     }
-
-    @Test
-    public void testGetAveragePrice() {
-    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
-        new House("city","Backer Street", 12, 100,2, 2, 1500,o);
-        new House("city","Backer Street", 12, 100,2, 2, 3000,o);
-        new House("city","Backer Street", 12, 100, 2, 2, 4500,o);
-        new House("city","Backer Street", 12, 100, 2, 2, 6000,o);
-        Assert.assertEquals(3750,House.getAveragePrice(),0.001);
-    }
-
-    @Test
-    public void testGetAveragePriceWithNoHouses() {
-    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
-        House h1 = new House("city","Backer Street", 12, 100, 2, 2, 1500,o);
-        h1.remove();
-        Assert.assertEquals(0,House.getAveragePrice(),0.001);
-    }
-
-
-    @Test
-    public void testRemoveOneObj() {
-    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
-        House h1 = new House("city","Backer Street", 12, 100, 2, 2, 200,o);
-        h1.remove();
-        Assert.assertEquals(0,House.getNumOfHouses());
-    }
-
-    @Test
-    public void testRemoveNoObj() {
-    	Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
-        House h1 = new House("city","Backer Street", 12, 100, 2, 2, 200,o);
-        h1.remove();
-        h1.remove();
-        Assert.assertEquals(0,House.getNumOfHouses());
-    }
-
 }

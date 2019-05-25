@@ -56,9 +56,4 @@ public class RenterDAOMemory implements RenterDAO {
 		 for (Renter r : rentersList) if (r.getIBAN().equals(IBAN)) result.add(r);
 		 return result;
     }
-
-    @Override
-    public int nextId() {
-        return (rentersList.size() > 0 ? rentersList.get(rentersList.size()-1).getId()+1 : 1);
-    }
 }

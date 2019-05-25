@@ -12,8 +12,6 @@ public interface RenterDAO
  
 	Renter find(int UserId);
 
-    int nextId();
-	
 	List<Renter> findByFirstName(String firstName);
 	List<Renter> findByLastName(String lastName);
 	List<Renter> findByEmail(String email);

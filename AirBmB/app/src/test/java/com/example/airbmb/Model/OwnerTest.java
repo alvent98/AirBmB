@@ -1,24 +1,15 @@
 package com.example.airbmb.Model;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class OwnerTest {
 
-    @Before
+    /*@Before These should go on DAO test
     public void set(){
         Owner.removeAll();
     }
-
-    @Test
-    public void testOwner() {
-        new Owner ("firstName","lastName","email","IBAN","username","password");
-        new Owner ("firstName","lastName","email","IBAN","username","password");
-        new Owner ("firstName","lastName","email","IBAN","username","password");
-        Assert.assertEquals(3,Owner.getNumOfOwners());
-    }
-
+    
     @Test
     public void testRemoveRenter() {
         Owner o =new Owner ("firstName","lastName","email","IBAN","username","password");
@@ -41,8 +32,65 @@ public class OwnerTest {
         Owner.removeAll();
         o1.remove();
         Assert.assertEquals(0,Owner.getNumOfOwners());
+        
+    @Test
+    public void testOwner() {
+        new Owner ("firstName","lastName","email","IBAN","username","password");
+        new Owner ("firstName","lastName","email","IBAN","username","password");
+        new Owner ("firstName","lastName","email","IBAN","username","password");
+        Assert.assertEquals(3,Owner.getNumOfOwners());
     }
-
+    }
+    */
+	
+	@Test
+    public void testSetAndGetFirstName() {
+        Owner r=new Owner ("firstName","lastName","email","IBAN","username","password");
+        String name = "Brave Sir Robbin";
+        r.setFirstName(name);
+        Assert.assertEquals(r.getFirstName(),name);
+    }
+	
+	@Test
+    public void testSetAndGetLastName() {
+        Owner r =new Owner ("firstName","lastName","email","IBAN","username","password");
+        String name = "Black Adder";
+        r.setLastName(name);
+        Assert.assertEquals(r.getLastName(),name);
+    }
+	
+	@Test
+    public void testSetAndGetEmail() {
+        Owner r =new Owner ("firstName","lastName","email","IBAN","username","password");
+        String email = "em@il";
+        r.setEmail(email);
+        Assert.assertEquals(r.getEmail(),email);
+    }
+	
+	@Test
+    public void testSetAndGetIban() {
+        Owner r =new Owner ("firstName","lastName","email","IBAN","username","password");
+        String iban = "GR0000111666";
+        r.setIBAN(iban);
+        Assert.assertEquals(r.getIBAN(),iban);
+    }
+	
+	@Test
+    public void testSetAndGetUsername() {
+        Owner r =new Owner ("firstName","lastName","email","IBAN","username","password");
+        String username = "CoconutCarrier";
+        r.setUsername(username);
+        Assert.assertEquals(r.getUsername(),username);
+    }
+	
+	@Test
+    public void testSetAndGetPassword() {
+        Owner r =new Owner ("firstName","lastName","email","IBAN","username","password");
+        String password = "OpenTheDoor!";
+        r.setPassword(password);
+        Assert.assertEquals(r.getPassword(),password);
+    }
+	
     @Test
     public void testEquals() {
         Owner o1=new Owner ("firstName","lastName","email","IBAN","username","password");

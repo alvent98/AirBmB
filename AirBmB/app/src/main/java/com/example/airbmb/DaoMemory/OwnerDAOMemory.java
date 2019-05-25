@@ -55,9 +55,4 @@ public class OwnerDAOMemory implements OwnerDAO {
 		 for (Owner o : ownersList) if (o.getIBAN().equals(IBAN)) result.add(o);
 		 return result;
     }
-
-    @Override
-    public int nextId() {
-        return (ownersList.size() > 0 ? ownersList.get(ownersList.size()-1).getId()+1 : 1);
-    }
 }

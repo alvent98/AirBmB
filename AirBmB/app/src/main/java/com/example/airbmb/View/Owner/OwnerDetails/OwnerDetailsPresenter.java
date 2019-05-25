@@ -50,10 +50,10 @@ public class OwnerDetailsPresenter
 
         String msg = "Successful delete of owner "+attachedOwner.getLastName()+" "+ attachedOwner.getFirstName()+"'!";
 
-        ArrayList<Lease> leaseResults = leases.findLeaseByOnwer(view.getAttachedUserId());
+        ArrayList<Lease> leaseResults = leases.findAll();
         for(Lease l : leaseResults)
         {
-        	leases.delete(l);
+        	if(l.getHouse().getOwner().getId()==view.getAttachedUserId()) leases.delete(l);
         }
         
         ArrayList<House> houseResults = houses.findByOwner(view.getAttachedUserId());

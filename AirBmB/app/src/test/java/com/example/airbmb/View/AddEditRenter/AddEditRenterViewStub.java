@@ -1,20 +1,22 @@
 package com.example.airbmb.View.Renter.AddEditRenter;
 
+import com.example.airbmb.View.House.AddEditHouse.AddEditHousePresenter;
+
 public class AddEditRenterViewStub {
 	private String firstName, lastName, email, iban, username, password, pageName, errorTitle, 
 	errorMessage, finishMessage;
 
 	private Integer attachedRenterID;
 	
-	//private AddEditHousePresenter presenter;
+	private AddEditHousePresenter presenter;
 	
-	/*public void setPresenter(AddEditHousePresenter presenter) {
+	public void setPresenter(AddEditHousePresenter presenter) {
 	   this.presenter = presenter;
 	}
 	
 	public AddEditHousePresenter getPresenter() {
 	   return presenter;
-	}*/
+	}
 	
 	public AddEditRenterViewStub()
 	{
