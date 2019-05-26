@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AirBmB</string>
+    <string name="title_activity_add_edit_house2">AddEditHouseActivity2</string>
+    <string name="title_activity_house_details2">HouseDetailsActivity2</string>
 </resources>

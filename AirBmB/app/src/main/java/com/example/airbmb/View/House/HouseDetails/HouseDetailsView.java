@@ -13,7 +13,7 @@ public interface HouseDetailsView
      * Sets House's ID
      * @param value id
      */
-    void setId(String value);
+    void setId(int value);
 
     /**
      * Sets house's city
