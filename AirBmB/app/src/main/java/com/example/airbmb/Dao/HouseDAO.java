@@ -77,8 +77,8 @@ public interface HouseDAO
 
 	/**
 	 * finds houses according to owner
-	 * @param onwerId owner's unique id
+	 * @param ownerId owner's unique id
 	 * @return list of houses that were found
 	 */
-	ArrayList<House> findByOwner(int onwerId);
+	ArrayList<House> findByOwner(int ownerId);
 }
