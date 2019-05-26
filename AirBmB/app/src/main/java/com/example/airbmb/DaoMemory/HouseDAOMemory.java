@@ -6,6 +6,7 @@ import com.example.airbmb.Model.House;
 
 public class HouseDAOMemory implements HouseDAO {
     protected static ArrayList<House> houseList = new ArrayList<House>();
+    protected static double averagePrice;
    
     public void delete(House entity) {
         houseList.remove(entity);
@@ -101,5 +102,21 @@ public class HouseDAOMemory implements HouseDAO {
         for (House h : houseList) if (h.getOwner().getId()==ownerId) result.add(h);
         
         return result;
+    }
+	
+    public double getAveragePrice() {
+        if (houseList.size() == 0){
+            //System.out.println("There are no registered houses yet.");
+            return 0;
+        }
+
+        double sum = 0;
+
+        for(House h : houseList){
+            sum += h.getPrice();
+        }
+
+        averagePrice= sum/houseList.size();
+        return averagePrice;
     }
 }
