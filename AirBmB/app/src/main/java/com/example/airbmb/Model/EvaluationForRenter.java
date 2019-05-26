@@ -14,20 +14,22 @@ public class EvaluationForRenter extends Evaluation {
     /**
      * Constructor that initializes the rating
      * The Owner rates the Renter with a score from 1 to 5
+     * @param lease lease
      * @param feedback Owner's rating
      */
-    public EvaluationForRenter(int feedback) {
-        this(feedback,"",0);
+    public EvaluationForRenter(Lease lease, int feedback) {
+        this(lease, feedback,"",0);
     }
 
     /**
      * Constructor that initializes the characteristics of an evaluation for the Renter
+     * @param lease lease
      * @param feedback Owner's rating
      * @param comments Owner's review
      * @param repairsValue the cost of damages, if they exist
      */
-    public EvaluationForRenter(int feedback, String comments, int repairsValue) {
-        super(feedback,comments);
+    public EvaluationForRenter(Lease lease, int feedback, String comments, int repairsValue) {
+        super(lease, feedback,comments);
         this.repairsValue = repairsValue;
         evaluationsForRentersList.add(this);
         recalculateAverage();

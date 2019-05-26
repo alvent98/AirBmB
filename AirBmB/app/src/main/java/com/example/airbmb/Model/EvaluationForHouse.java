@@ -13,10 +13,11 @@ public class EvaluationForHouse extends Evaluation {
     /**
      * Constructor that initializes the rating
      * The Renter rates the House with a score from 1 to 5
+     * @param lease lease
      * @param feedback Renter's review
      */
-    public EvaluationForHouse(int feedback) {
-        this(feedback,"");
+    public EvaluationForHouse(Lease lease, int feedback) {
+        this(lease,feedback,"");
     }
 
     /**
@@ -24,8 +25,8 @@ public class EvaluationForHouse extends Evaluation {
      * @param feedback Renter's rating for the House
      * @param comments Renter's review for the House
      */
-    public EvaluationForHouse(int feedback, String comments) {
-        super(feedback,comments);
+    public EvaluationForHouse(Lease lease, int feedback, String comments) {
+        super(lease, feedback,comments);
         evaluationsForHousesList.add(this);
         recalculateAverage();
     }

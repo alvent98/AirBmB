@@ -13,14 +13,17 @@ public abstract class Evaluation {
     private int evaluationId ;
     private int feedback;
     private String comments;
+    private Lease lease;
 
 
     /**
      * Constructor that initializes the characteristics of an evaluation
+     * @param lease lease
      * @param feedback user's rating
      * @param comments user's review
      */
-    public Evaluation(int feedback, String comments) {
+    public Evaluation(Lease lease, int feedback, String comments) {
+        this.lease = lease;
         this.feedback = feedback;
         this.comments = comments;
         evaluationId=num++;
@@ -28,10 +31,11 @@ public abstract class Evaluation {
 
     /**
      * Constructor that initializes the rating
-     * @param feedback
+     * @param lease lease
+     * @param feedback user's rating
      */
-    public Evaluation(int feedback) {
-        this(feedback,"");
+    public Evaluation(Lease lease, int feedback) {
+        this(lease, feedback,"");
     }
 
     /**
@@ -44,8 +48,24 @@ public abstract class Evaluation {
     }
 
     /**
+     * Returns the lease that the evaluation is for
+     * @return lease
+     */
+    public Lease getLease() {
+        return lease;
+    }
+
+    /**
+     * Sets the lease the evaluation is for
+     * @param lease lease
+     */
+    public void setLease(Lease lease) {
+        this.lease = lease;
+    }
+
+    /**
      * Returns user's rating
-     * @return
+     * @return feedback
      */
     public int getFeedback() {
         return feedback;
@@ -69,7 +89,7 @@ public abstract class Evaluation {
 
     /**
      * Sets user's review
-     * @param comments
+     * @param comments user's review
      */
     public void setComments(String comments) {
         this.comments = comments;
