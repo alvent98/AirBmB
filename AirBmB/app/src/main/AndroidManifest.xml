@@ -17,8 +17,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.airbmb.View.House.HouseDetails.HouseDetailsActivity2"
-            android:label="@string/title_activity_house_details2"
+            android:name="com.example.airbmb.View.House.AddEditHouse.AddEditHouseActivity"
+            android:label="@string/title_activity_add_edit_house2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.example.airbmb.View.House.HouseDetails.HouseDetailsActivity" />
+        <activity android:name="com.example.airbmb.View.House.ManageHouses.ManageHousesActivity" />
+        <activity
+            android:name="com.example.airbmb.View.House.ManageHouses.ManageHousesActivity2"
+            android:label="@string/title_activity_manage_houses2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.airbmb.View.Owner.AddEditOwner.AddEditOwnerActivity"
+            android:label="@string/title_activity_add_edit_owner"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

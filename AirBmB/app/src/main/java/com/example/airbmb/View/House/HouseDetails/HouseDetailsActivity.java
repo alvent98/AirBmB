@@ -34,7 +34,7 @@ public class HouseDetailsActivity extends AppCompatActivity implements HouseDeta
     }
 
     public void setId(int value){
-        ((TextView)findViewById(R.id.text_house_id)).setText(value);
+        ((TextView)findViewById(R.id.text_city)).setText(value);
     }
 
     public void setCity(String value){
@@ -79,6 +79,7 @@ public class HouseDetailsActivity extends AppCompatActivity implements HouseDeta
         Toast.makeText(this, value, Toast.LENGTH_LONG).show();
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -122,16 +123,4 @@ public class HouseDetailsActivity extends AppCompatActivity implements HouseDeta
         return tx;
     }
 
-    //We possibly don't need this, maybe we need it, altered.
-    private TableRow add_author_to_table(String title, String details)
-    {
-        TableRow tr = new TableRow(this);
-        tr.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
-        tr.setWeightSum(7);
-
-        tr.addView(create_plain_text_view(title, 3, R.color.colorWhite));
-        tr.addView(create_plain_text_view(details, 4, R.color.colorSemiWhite));
-
-        return tr;
-    }
 }

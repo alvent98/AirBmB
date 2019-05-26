@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.airbmb.Model.House;
@@ -18,7 +19,7 @@ import project_airbmb.airbmb.R;
 import com.example.airbmb.DaoMemory.HouseDAOMemory;
 import com.example.airbmb.View.House.AddEditHouse.AddEditHouseActivity;
 import com.example.airbmb.View.House.HouseDetails.HouseDetailsActivity;
-import com.example.airbmb.View.Util.AdvancedListAdapter; //Anagastika prepei na to ensomatosoume aftousio.
+import com.example.airbmb.View.AdvancedListAdapter;
 
 public class ManageHousesActivity extends AppCompatActivity implements ManageHousesView, SearchView.OnQueryTextListener
 {
@@ -122,10 +123,21 @@ public class ManageHousesActivity extends AppCompatActivity implements ManageHou
         startActivityForResult(intent, 1);
     }
 
+    public void clickHouse(int uid) {
+        Intent intent = new Intent(this, AddEditHouseActivity.class);
+        intent.putExtra("house_id", uid);
+        startActivityForResult(intent, 1);
+    }
+
     public void startAddNew()
     {
         Intent intent = new Intent(this, AddEditHouseActivity.class);
         startActivityForResult(intent, 0);
+    }
+
+    @Override
+    public void loadSource(ArrayList<House> input) {
+
     }
 
     public void showToast(String value){

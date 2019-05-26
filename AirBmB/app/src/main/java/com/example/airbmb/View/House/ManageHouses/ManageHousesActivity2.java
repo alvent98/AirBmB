@@ -1,4 +1,4 @@
-package com.example.airbmb.View.House.HouseDetails;
+package com.example.airbmb.View.House.ManageHouses;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,12 +9,12 @@ import android.view.View;
 
 import project_airbmb.airbmb.R;
 
-public class HouseDetailsActivity2 extends AppCompatActivity {
+public class ManageHousesActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_house_details);
+        setContentView(R.layout.activity_manage_houses2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
