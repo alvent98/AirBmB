@@ -11,25 +11,45 @@ public class AddEditRenterPresenter
     private RenterDAO renters;
 
     private Renter attachedRenter;
-    
+
+    /**
+     * Checks if IBAN is between 16 and 30 characters
+     * @param in IBAN to be checked
+     * @return true if IBAN is valid
+     */
     private boolean isValidIBAN(String in) {
     	if(in.length()<15 || in.length()>31) return false;
     	for(int i = 0; i < 2; i++) if(!Character.isAlphabetic(in.charAt(i))) return false;
     	return true;
     }
-    
+
+    /**
+     * Checks if the given word is alphabetical
+     * @param in word to be checked
+     * @return true if given word is valid
+     */
     private boolean isValidName(String in) {
     	if(in.length()<2 || in.length()>15) return false;
     	for(int i = 0; i < in.length(); i++) if(!Character.isAlphabetic(in.charAt(i))) return false;
     	return true;
     }
-    
+
+    /**
+     * Checks if the given word is valid
+     * @param in word to be check
+     * @return true if the given word is are valid
+     */
     private boolean validateCredential(String in) {
     	if(in.length()<2 || in.length()>15) return false;
     	if(in.toLowerCase().equals(in)) return false;
     	return true;
     }
-    
+
+    /**
+     * Returns true if the given email has the right format
+     * @param email owner's email
+     * @return true if email is valid
+     */
     private boolean validateEmail(String email) {
     	int posOfPapaki = -1;
     	int posOfDot = -1 ;
@@ -45,6 +65,11 @@ public class AddEditRenterPresenter
 		return false;
 	}
 
+    /**
+     * Presenter initialised
+     * @param view view instance
+     * @param renters renter instance
+     */
     public AddEditRenterPresenter(AddEditUserView view, RenterDAO renters)
     {
         this.view = view;
@@ -65,6 +90,13 @@ public class AddEditRenterPresenter
         }
     }
 
+    /**
+     * When the user saves a renter, it is checked if
+     * the first and last name are between 2 and 15 characters,
+     * the email has the correct form,
+     * the IBAN is between 16 and 30 characters,
+     * the username and password are valid.
+     */
     public void onSaveRenter()
     {
         String  firstName = view.getFirstName(),

@@ -10,13 +10,25 @@ import com.example.airbmb.Model.House;
 import com.example.airbmb.Model.Lease;
 import com.example.airbmb.Model.Renter;
 
+/**
+ * Add Leases Presenter
+ */
 public class AddLeasesPresenter {
 
     private AddLeasesView view;
     private HouseDAO houses;
     private LeaseDAO leases;
     Renter attachedRenter;
-    
+
+    /**
+     * This method returns true if two date periods are in conflict
+     * and therefore a house is occupied
+     * @param start1 start date user1 chose
+     * @param start2 start date user2 chose
+     * @param end1 end date user1 chose
+     * @param end2 end date user2 chose
+     * @return true if the two date periods are in conflict
+     */
     private boolean coinside(LocalDate start1, LocalDate start2,LocalDate end1, LocalDate end2) {
     	if(start2.isAfter(end1)) {
     		if(start2.isAfter(start1)) return true;
@@ -27,6 +39,13 @@ public class AddLeasesPresenter {
     	return false;
     }
 
+    /**
+     * Presenter initialised
+     * @param view view instance
+     * @param houses house instance
+     * @param renters renter instance
+     * @param leases lease instance
+     */
     public AddLeasesPresenter(AddLeasesView view, HouseDAO houses, RenterDAO renters, LeaseDAO leases)
     {
         this.view = view;
@@ -46,6 +65,10 @@ public class AddLeasesPresenter {
         view.setHouseList(housesList);
     }
 
+    /**
+     * When the user saves a lease, it is checked
+     * whether the lease can be made or not
+     */
     public void onSaveLease()
     {
     	int cost = view.getCost();

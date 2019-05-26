@@ -10,6 +10,9 @@ import com.example.airbmb.Model.Lease;
 import com.example.airbmb.Model.Owner;
 import com.example.airbmb.View.User.UserDetailsView;
 
+/**
+ * Owner Details Presenter
+ */
 public class OwnerDetailsPresenter
 {
     private UserDetailsView view;
@@ -18,6 +21,11 @@ public class OwnerDetailsPresenter
 	private HouseDAO houses;
     private Owner attachedOwner;
 
+    /**
+     * Presenter initialised
+     * @param view view instance
+     * @param owners owner instance
+     */
     public OwnerDetailsPresenter(UserDetailsView view, OwnerDAO owners)
     {
         this.view = view;
@@ -34,17 +42,26 @@ public class OwnerDetailsPresenter
         view.setPassword(attachedOwner.getPassword());
     }
 
+    /**
+     * Shows the owner's edit button
+     */
     void onStartEditButtonClick()
     {
         view.startEdit(attachedOwner.getId());
     }
-    
+
+    /**
+     * Shows the owner's delete button
+     */
     void onStartDeleteButtonClick()
     {
         view.startDelete("Owner Delete","All houses of the owner on system will be deleted. \n"
         		+ "All relative leases will be removed.");
     }
 
+    /**
+     * Deletes the owner from the list
+     */
     void onDoDeleteAndFinish()
     {
 
@@ -68,6 +85,10 @@ public class OwnerDetailsPresenter
         view.doDeleteAndFinish(msg);
     }
 
+    /**
+     * Shows a toast message
+     * @param value message
+     */
     void onShowToast(String value)
     {
         view.showToast(value);
