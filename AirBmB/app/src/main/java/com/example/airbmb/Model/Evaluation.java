@@ -117,10 +117,4 @@ public abstract class Evaluation {
 
         return Objects.hash(evaluationId);
     }
-
-    /**
-     *This method removes an evaluation from the list
-     */
-    public abstract void remove();
-
 }
