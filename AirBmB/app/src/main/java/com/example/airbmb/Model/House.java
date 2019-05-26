@@ -29,7 +29,7 @@ public class House {
      * @param area size of the house
      * @param floor the floor where the house is
      * @param rooms number of rooms
-     * @param price price of every day of staying at the house
+     * @param price price for every day of staying at the house
      * @param owner House's owner
      */
 
@@ -162,7 +162,7 @@ public class House {
 
     /**
      * Sets house's price
-     * @param price price of every day of staying at the house
+     * @param price price for every day of staying at the house
      */
     public void setPrice(int price) {
         this.price = price;
