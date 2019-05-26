@@ -12,6 +12,14 @@ public class Lease {
 	private LocalDate endDate;
     private int cost;
 
+	/**
+	 * Constructor that initializes the main characteristics of a Lease
+	 * @param startDate start date of the lease
+	 * @param endDate end date of the lease
+	 * @param cost lease's cost
+	 * @param renter house's renter
+	 * @param house house
+	 */
     public Lease(LocalDate startDate, LocalDate endDate, int cost, Renter renter, House house) {
     	this.startDate = startDate;
     	this.endDate = endDate;
@@ -89,6 +97,11 @@ public class Lease {
 		this.house = house;
 	}
 
+	/**
+	 * This method tests if two objects are equal.
+	 * @param o the object to be tested
+	 * @return true if the objects are equal
+	 */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -97,6 +110,10 @@ public class Lease {
         return leaseId == lease.leaseId;
     }
 
+	/**
+	 * This method generates a hash code for the id
+	 * @return the hash code
+	 */
     @Override
     public int hashCode() {
 

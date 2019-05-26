@@ -20,7 +20,7 @@ public class House {
     private Owner owner;
     
     /**
-     * Constructor the initializes the main characteristics of a House
+     * Constructor that initializes the main characteristics of a House
      * @param city the city where the House is located
      * @param street the street where the House is located
      * @param number number of House's address
