@@ -8,15 +8,15 @@ import com.example.airbmb.Model.EvaluationForHouse;
  * EvaluationForHouse Memory DAO
  */
 public class EvaluationForHouseDAOMemory implements EvaluationForHouseDAO {
-    protected static ArrayList<EvaluationForHouse> EvaluationForHouseList = new ArrayList<EvaluationForHouse>();
+    protected static ArrayList<EvaluationForHouse> evaluationForHouseList = new ArrayList<EvaluationForHouse>();
     protected static double averagePrice;
 
     /**
-     * Deletes a EvaluationForHouse
+     * Deletes an EvaluationForHouse
      * @param entity EvaluationForHouse
      */
     public void delete(EvaluationForHouse entity) {
-        EvaluationForHouseList.remove(entity);
+        evaluationForHouseList.remove(entity);
     }
 
     /**
@@ -25,7 +25,7 @@ public class EvaluationForHouseDAOMemory implements EvaluationForHouseDAO {
      */
     public ArrayList<EvaluationForHouse> findAll() {
         ArrayList<EvaluationForHouse> result = new ArrayList<EvaluationForHouse>();
-        result.addAll(EvaluationForHouseList);
+        result.addAll(evaluationForHouseList);
         return result;
     }
 
@@ -34,40 +34,33 @@ public class EvaluationForHouseDAOMemory implements EvaluationForHouseDAO {
      * @param entity EvaluationForHouse
      */
     public void save(EvaluationForHouse entity) {
-        EvaluationForHouseList.add(entity);
+        evaluationForHouseList.add(entity);
     }
 
     /**
      * Finds a EvaluationForHouse according to id
-     * @param houseId EvaluationForHouse's id
+     * @param evaluationForHouseId EvaluationForHouse's id
      * @return the EvaluationForHouse that was found or null
      */
-    public House find(int EvaluationForHouseId)
+    public EvaluationForHouse find(int evaluationForHouseId)
     {
-    	for(EvaluationForHouse EFH : EvaluationForHouseList) if(EFH.getEvaluationId() == EvaluationForHouseId) return EFH;
+    	for(EvaluationForHouse e : evaluationForHouseList) if(e.getEvaluationId() == evaluationForHouseId) return e;
 
         return null;
     }
 
    /**
 	 * finds a EvaluationForHouse according to Feedback
-	 * @param Feedback EvaluationForHouse's int from 1 to 5
+	 * @param feedback EvaluationForHouse's int from 1 to 5
 	 * @return Evaluation that was found or null
 	 */
     @Override
-    public ArrayList<EvaluationForHouse> findByFeedback(int Feedback){
+    public ArrayList<EvaluationForHouse> findByFeedback(int feedback){
 
-        ArrayList<EvaluationForHouse> result = new ArrayList<>();
-
-        if (Feedback != null) {
-            for (EvaluationForHouse F : EvaluationForHouseList) {
-                if (F.getCity().contains(Feedback)) {
-                    result.add(F);
-                }
-            }
+        ArrayList<EvaluationForHouse> result = new ArrayList<>(); 
+        for (EvaluationForHouse e : evaluationForHouseList) {
+        	if (e.getFeedback()==feedback) result.add(e);
         }
         return result;
     }
-
-   
 }

@@ -1,5 +1,6 @@
 package com.example.airbmb.Dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import com.example.airbmb.Model.EvaluationForHouse;
 
@@ -38,8 +39,5 @@ public interface EvaluationForHouseDAO
 	 * @param Feedback EvaluationForHouse's int from 1 to 5
 	 * @return Evaluation that was found or null
 	 */
-	EvaluationForHouse findByFeedback(int Feedback);
-	
-
-	
+	ArrayList<EvaluationForHouse> findByFeedback(int Feedback);
  }

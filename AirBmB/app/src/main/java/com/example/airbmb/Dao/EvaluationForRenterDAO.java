@@ -1,6 +1,6 @@
 package com.example.airbmb.Dao;
 
-import java.util.List;
+import java.util.ArrayList;
 import com.example.airbmb.Model.EvaluationForRenter;
 
 /**
@@ -18,7 +18,7 @@ public interface EvaluationForRenterDAO
 	 * Returns all EvaluationForRenter
 	 * @return list of EvaluationForRenter
 	 */
-	List<EvaluationForRenter> findAll();
+	ArrayList<EvaluationForRenter> findAll();
 
 	/**
 	 * Saves a EvaluationForRenter
@@ -36,8 +36,7 @@ public interface EvaluationForRenterDAO
 	/**
 	 * finds a EvaluationForRenter according to Feedback
 	 * @param Feedback EvaluationForRenter's int from 1 to 5
-	 * @return Evaluation that was found or null
+	 * @return The ArrayList of evaluations found, or null
 	 */
-	EvaluationForRenter findByFeedback(int Feedback);
-	
+	ArrayList<EvaluationForRenter> findByFeedback(int Feedback);
  }

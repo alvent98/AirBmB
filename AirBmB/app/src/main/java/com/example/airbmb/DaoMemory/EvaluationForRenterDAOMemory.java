@@ -8,15 +8,15 @@ import com.example.airbmb.Model.EvaluationForRenter;
  * EvaluationForRenter Memory DAO
  */
 public class EvaluationForRenterDAOMemory implements EvaluationForRenterDAO {
-    protected static ArrayList<EvaluationForRenter> EvaluationForRenterList = new ArrayList<EvaluationForRenter>();
+    protected static ArrayList<EvaluationForRenter> evaluationForRenterList = new ArrayList<EvaluationForRenter>();
     protected static double averagePrice;
 
     /**
      * Deletes a EvaluationForRenter
-     * @param entity EvaluationForRenter
+     * @param evaluationForRenter EvaluationForRenter
      */
-    public void delete(EvaluationForRenter entity) {
-       EvaluationForRenterList.remove(entity);
+    public void delete(EvaluationForRenter evaluationForRenter) {
+       evaluationForRenterList.remove(evaluationForRenter);
     }
 
     /**
@@ -25,45 +25,42 @@ public class EvaluationForRenterDAOMemory implements EvaluationForRenterDAO {
      */
     public ArrayList<EvaluationForRenter> findAll() {
         ArrayList<EvaluationForRenter> result = new ArrayList<EvaluationForRenter>();
-        result.addAll(EvaluationForRenterList);
+        result.addAll(evaluationForRenterList);
         return result;
     }
 
     /**
      * Saves a EvaluationForRenter
-     * @param entity EvaluationForRenter
+     * @param evaluationForRenter EvaluationForRenter
      */
-    public void save(EvaluationForRenter entity) {
-        EvaluationForRenterList.add(entity);
+    public void save(EvaluationForRenter evaluationForRenter) {
+        evaluationForRenterList.add(evaluationForRenter);
     }
 
     /**
      * Finds a EvaluationForRenter according to id
-     * @param houseId EvaluationForRenter's id
+     * @param evaluationForRenterId EvaluationForRenter's id
      * @return the EvaluationForRenter that was found or null
      */
-    public House find(int EvaluationForRenterId)
+    public EvaluationForRenter find(int evaluationForRenterId)
     {
-    	for(EvaluationForRenter EFR : EvaluationForRenterList) if(EFR.getEvaluationId() == EvaluationForRenterId) return EFR;
+    	for(EvaluationForRenter e : evaluationForRenterList) if(e.getEvaluationId() == evaluationForRenterId) return e;
 
         return null;
     }
 
    /**
-	 * finds a EvaluationForRenter according to Feedback
-	 * @param Feedback EvaluationForRenter's int from 1 to 5
-	 * @return Evaluation that was found or null
+	 * finds a EvaluationForRenter according to feedback
+	 * @param feedback EvaluationForRenter's int from 1 to 5
+	 * @return Evaluation list that was found or null.
 	 */
     @Override
-    public ArrayList<EvaluationForRenter> findByFeedback(int Feedback){
+    public ArrayList<EvaluationForRenter> findByFeedback(int feedback){
 
         ArrayList<EvaluationForRenter> result = new ArrayList<>();
-
-        if (Feedback != null) {
-            for (EvaluationForHouse F : EvaluationForHouseList) {
-                if (F.getCity().contains(Feedback)) {
-                    result.add(F);
-                }
+        for (EvaluationForRenter f : evaluationForRenterList) {
+            if (f.getFeedback()==feedback) {
+                result.add(f);
             }
         }
         return result;
