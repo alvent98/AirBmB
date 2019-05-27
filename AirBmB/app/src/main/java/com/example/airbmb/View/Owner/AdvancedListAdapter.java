@@ -1,4 +1,4 @@
-package com.example.airbmb.View;
+package com.example.airbmb.View.Owner;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,14 +7,14 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.airbmb.Model.Owner;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.example.airbmb.Model.House;
 import project_airbmb.airbmb.R;
 
 
@@ -22,7 +22,7 @@ public class AdvancedListAdapter extends BaseAdapter implements Filterable
 {
     private Context context;
     private LayoutInflater inflater;
-    private List<House> dataSource, rawDataSource;
+    private List<Owner> dataSource, rawDataSource;
     private ItemFilter mFilter = new ItemFilter();
 
     /**
@@ -78,22 +78,20 @@ public class AdvancedListAdapter extends BaseAdapter implements Filterable
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
-        House h = (House) getItem(position);
+        Owner h = (Owner) getItem(position);
 
-        View rowView = inflater.inflate(h == null ? R.layout.activity_house_details : R.layout.activity_manage_houses2, parent, false);
+        View rowView = inflater.inflate(h == null ? R.layout.activity_manage_owners: R.layout.content_manage_houses2, parent, false);
 
-        ((TextView) rowView.findViewById(R.id.edit_text_city)).setText(h.getCity());
+        ((TextView) rowView.findViewById(R.id.text_first_name)).setText(h.getFirstName());
+        ((TextView) rowView.findViewById(R.id.text_last_name)).setText(h.getLastName());
 
-        if(h.getStreet() != null)
-            ((TextView) rowView.findViewById(R.id.edit_text_floors)).setText(h.getFloor());
-
-        ((TextView) rowView.findViewById(R.id.edit_text_area)).setText(h.getArea());
-        //((TextView) rowView.findViewById(R.id.item_view_details)).setText(">");
-
-//        PixelUtils.drawInitialsImage(context, (ImageView) rowView.findViewById(R.id.item_image), h.getFirst(), new int[]{R.color.colorSmallBlue, R.color.colorSmallGreen, R.color.colorSmallOrange});
-
+        ((TextView) rowView.findViewById(R.id.text_email)).setText(h.getEmail());
+//        ((TextView) rowView.findViewById(R.id.item_view_details)).setText(">");
+//
+////        PixelUtils.drawInitialsImage(context, (ImageView) rowView.findViewById(R.id.item_image), h.getFirst(), new int[]{R.color.colorSmallBlue, R.color.colorSmallGreen, R.color.colorSmallOrange});
+//
 //        String initials = "";
-
+//
 //        ((TextView) rowView.findViewById(R.id.image_text)).setText(initials);
 
         return rowView;
@@ -103,7 +101,7 @@ public class AdvancedListAdapter extends BaseAdapter implements Filterable
      * Loads data from source
      * @param dataSource list
      */
-    public void loadSource(List<House> dataSource)
+    public void loadSource(List<Owner> dataSource)
     {
         this.dataSource = dataSource;
         Collections.reverse(this.dataSource);
@@ -133,7 +131,7 @@ public class AdvancedListAdapter extends BaseAdapter implements Filterable
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results)
         {
-            dataSource = (List<House>)results.values;
+            dataSource = (List<Owner>)results.values;
             notifyDataSetChanged();
         }
 
@@ -147,10 +145,10 @@ public class AdvancedListAdapter extends BaseAdapter implements Filterable
 
             String filterString = constraint.toString().toLowerCase();
             FilterResults results = new FilterResults();
-            List<House> matches = new ArrayList<>();
+            List<Owner> matches = new ArrayList<>();
 
-            for(House h : rawDataSource)
-                if (Math.abs(h.getArea() - Integer.parseInt(filterString)) < 15 || h.getFloor()== Integer.parseInt(filterString) || h.getCity().toLowerCase().contains(filterString))
+            for(Owner h : rawDataSource)
+                if (h.getFirstName()== filterString || h.getLastName() == filterString || h.getEmail() == filterString)
                     matches.add(h);
 
             results.values = matches;

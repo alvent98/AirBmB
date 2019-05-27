@@ -93,4 +93,7 @@ public class OwnerDetailsPresenter
     {
         view.showToast(value);
     }
+
+    public void onStartShowHousesButtonClick() {
+    }
 }

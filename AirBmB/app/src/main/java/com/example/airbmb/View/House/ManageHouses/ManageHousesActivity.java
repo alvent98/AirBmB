@@ -33,7 +33,7 @@ public class ManageHousesActivity extends AppCompatActivity implements ManageHou
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.manage_items);
+        setContentView(R.layout.activity_manage_houses2);
 
         adapter = new AdvancedListAdapter(this);
 
@@ -47,7 +47,7 @@ public class ManageHousesActivity extends AppCompatActivity implements ManageHou
 
         presenter = new ManageHousesPresenter(this, new HouseDAOMemory());
 
-        findViewById(R.id.item_add_new).setOnClickListener(new View.OnClickListener()
+        findViewById(R.id.house_add_new).setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view){
@@ -60,7 +60,7 @@ public class ManageHousesActivity extends AppCompatActivity implements ManageHou
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                presenter.onClickItem(((House)parent.getHouseAtPosition(position)).getUID());
+                presenter.onClickItem((parent.getChildAt(position)).getHeight());
             }
         });
     }

@@ -11,8 +11,6 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
-
 import com.example.airbmb.Model.Owner;
 import project_airbmb.airbmb.R;
 import com.example.airbmb.DaoMemory.HouseDAOMemory;
@@ -71,7 +69,7 @@ public class HouseDetailsActivity extends AppCompatActivity implements HouseDeta
     }
 
     public void setPageName(String value){
-        getSupportActionBar().setTitle(value); //Possibly set Title is from another world (DC or Marvel, don't know)
+        getSupportActionBar().setTitle(value);
     }
 
 

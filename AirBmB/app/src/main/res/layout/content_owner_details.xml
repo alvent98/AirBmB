@@ -5,10 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.airbmb.View.House.ManageHouses.ManageHousesActivity2"
-    tools:showIn="@layout/activity_manage_houses2">
+    tools:context="com.example.airbmb.View.Owner.OwnerDetails.OwnerDetailsActivity"
+    tools:showIn="@layout/activity_owner_details">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <Button
+        android:id="@+id/edit_user_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 </android.support.constraint.ConstraintLayout>

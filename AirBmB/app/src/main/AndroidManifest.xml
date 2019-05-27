@@ -23,12 +23,44 @@
         <activity android:name="com.example.airbmb.View.House.HouseDetails.HouseDetailsActivity" />
         <activity android:name="com.example.airbmb.View.House.ManageHouses.ManageHousesActivity" />
         <activity
+            android:name="com.example.airbmb.View.Owner.AddEditOwner.AddEditOwnerActivity"
+            android:label="@string/title_activity_add_edit_owner"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="com.example.airbmb.View.House.ManageHouses.ManageHousesActivity2"
             android:label="@string/title_activity_manage_houses2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.airbmb.View.Owner.AddEditOwner.AddEditOwnerActivity"
-            android:label="@string/title_activity_add_edit_owner"
+            android:name="com.example.airbmb.View.Owner.ManageOwners.ManageOwnersActivity"
+            android:label="@string/title_activity_manage_owners"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.airbmb.View.Owner.OwnerDetails.OwnerDetailsActivity"
+            android:label="@string/title_activity_owner_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.airbmb.View.HomePage.HomePageActivity"
+            android:label="@string/title_activity_home_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.airbmb.View.Renter.AddEditRenter.AddEditRenterActivity"
+            android:label="@string/title_activity_add_edit_renter"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.airbmb.View.Renter.RenterDetails.RentersDetailActivity"
+            android:label="@string/title_activity_renters_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.airbmb.View.Renter.ManageRenters.ManageRentersActivity"
+            android:label="@string/title_activity_manage_renters"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.airbmb.View.Lease.AddLeases.AddLeasesActivity"
+            android:label="@string/title_activity_add_leases"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.airbmb.View.Lease.ManageLeases.ManageLeasesActivity"
+            android:label="@string/title_activity_manage_leases"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

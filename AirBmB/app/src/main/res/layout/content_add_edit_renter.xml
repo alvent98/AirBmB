@@ -5,10 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.airbmb.View.House.ManageHouses.ManageHousesActivity2"
-    tools:showIn="@layout/activity_manage_houses2">
+    tools:context="com.example.airbmb.View.Renter.AddEditRenter.AddEditRenterActivity"
+    tools:showIn="@layout/activity_add_edit_renter">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </android.support.constraint.ConstraintLayout>

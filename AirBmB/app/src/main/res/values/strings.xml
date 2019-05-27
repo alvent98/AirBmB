@@ -4,4 +4,12 @@
     <string name="title_activity_house_details2">HouseDetailsActivity2</string>
     <string name="title_activity_manage_houses2">ManageHousesActivity2</string>
     <string name="title_activity_add_edit_owner">AddEditOwnerActivity</string>
+    <string name="title_activity_manage_owners">ManageOwnersActivity</string>
+    <string name="title_activity_owner_details">OwnerDetailsActivity</string>
+    <string name="title_activity_home_page">HomePageActivity</string>
+    <string name="title_activity_add_edit_renter">AddEditRenterActivity</string>
+    <string name="title_activity_renters_detail">RentersDetailActivity</string>
+    <string name="title_activity_manage_renters">ManageRentersActivity</string>
+    <string name="title_activity_add_leases">AddLeasesActivity</string>
+    <string name="title_activity_manage_leases">ManageLeasesActivity</string>
 </resources>
