@@ -1,0 +1,127 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><help_text>σ
+m1=1</help_text><element><id>Relation</id><coordinates><x>250</x><y>650</y><w>220</w><h>150</h></coordinates><panel_attributes>lt=-
+λαμβάνει
+m1=*
+m2=1</panel_attributes><additional_attributes>150;10;150;120;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>680</x><y>250</y><w>50</w><h>180</h></coordinates><panel_attributes>lt=-
+εχει
+m1=*
+m2=1</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>90</y><w>110</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;10;90;110</additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>260</y><w>70</w><h>170</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*
+παρέχει</panel_attributes><additional_attributes>10;10;10;150</additional_attributes></element><element><id>UMLClass</id><coordinates><x>330</x><y>410</y><w>370</w><h>250</h></coordinates><panel_attributes>Lease
+--
+-leaseId: int
+-duration: Period [1 day .. 3 months]
+-cost:int
+--
++ getLeaseId(): int{query} 
++ setCost(cost: int)
++ getCost(): int{query}
++ getStartDate(): LocalDate{query}
++ getEndDate(): LocalDate{query}
++getRenter():Renter {object}
++setRenter:( renter: Renter)
++getHouse():House {object}
++setHouse(house:House )
++ hashCode(): int
++ equals(obj: Object): boolean
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>690</x><y>500</y><w>100</w><h>50</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=0..1
+καταλήγει σε</panel_attributes><additional_attributes>10;20;80;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>770</x><y>440</y><w>230</w><h>200</h></coordinates><panel_attributes>Evaluation {abstract}
+--
+- evaluationId:ιντ
+- feedback: Integer [0..5]
+- comments: String
+-lease:Lease
+--
++ getEvaluationId(): Integer {query}
++ setFeedback(feedback: Integer)
++ getFeedback(): Integer {query}
++ setComments(comments: String)
++ getComments(): String {query}
++ hashCode(): int
++ equals(obj: Object): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>770</x><y>700</y><w>210</w><h>90</h></coordinates><panel_attributes>EvaluationForRenter
+--
+- repairsValue: int
+--
++getRepairsValue():int
++setRepairsValue(repairsValue:int ) 
++damages():boolean
+
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>90</y><w>110</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>880</x><y>630</y><w>50</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-
+m2=0..1</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>580</y><w>160</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;-
+m2=0..1</panel_attributes><additional_attributes>140;10;110;10;110;130;10;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>410</y><w>260</w><h>380</h></coordinates><panel_attributes>House
+--
+-id: int
+-city: String
+-street: String
+-number: int
+-area: int
+-floor: String
+-rooms: String
+-price: int
+--
++getId(): int
++getCity(): String
++setCity(city: String)
++getStreet(): String
++setStreet(street: String)
++getNumber(): int
++setNumber(number: int)
++getArea(): int
++setArea(area: int)
++getFloor(): String
++setFloor(floor: String)
++getRooms(): String
++setRooms(rooms: String)
++getPrice(): int
++setPrice(price: int)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>0</y><w>220</w><h>360</h></coordinates><panel_attributes>User {abstract}
+--
+-id:int
+-firstName: String
+-lastName: String
+-email: String
+-IBAN: String
+-username: String
+-password: String
+--
++getId():int{query}
++getFirstName(): String {query}
++setFirstName(firstName: String)
++getLastName(): String {query}
++setLastName(lastName: String)
++getEmail(): String {query}
++setEmail(email: String)
++getIBAN(): String {query}
++setIBAN(iban: String)
++getUsername(): String {query}
++setUsername(username: String)
++getPassword(): String {query}
++setPassword(password: String)
++hashCode(): int
++equals(obj: Object): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>200</y><w>170</w><h>60</h></coordinates><panel_attributes>Renter
+--
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>210</y><w>170</w><h>60</h></coordinates><panel_attributes>Owner
+--
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>700</y><w>170</w><h>60</h></coordinates><panel_attributes>EvaluationForHouse
+--
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
