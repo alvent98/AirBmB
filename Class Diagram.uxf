@@ -18,7 +18,7 @@ months]
 + setCost(cost: int)
 + getCost(): int{query}
 + getStartDate(): LocalDate{query}
-+setStartDate(StartDate: LocalDate)
++setStartDate(startDate: LocalDate)
 + getEndDate(): LocalDate{query}
 +setEndDate(endDate: LocalDate )
 + hashCode(): int
@@ -29,7 +29,7 @@ m1=1
 m2=0..1
 καταλήγει σε</panel_attributes><additional_attributes>10;20;80;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>770</x><y>440</y><w>230</w><h>180</h></coordinates><panel_attributes>Evaluation {abstract}
 --
-- evaluationId:ιντ
+- evaluationId:int
 - feedback: Integer [0..5]
 - comments: String
 --
