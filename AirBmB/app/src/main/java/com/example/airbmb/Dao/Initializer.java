@@ -1,5 +1,4 @@
 package com.example.airbmb.Dao;
-//initializer is for initialize data
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 
