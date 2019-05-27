@@ -15,12 +15,6 @@ In this file are presented the coverages that junit tests achieved:
 
 ![](Lease_Coverages.JPG)
 
-
-4. Request Class:      
-
-![](Request_Coverages.JPG)
-
-
 5. House Class:
 
 ![](HouseCoverageReport.png)
