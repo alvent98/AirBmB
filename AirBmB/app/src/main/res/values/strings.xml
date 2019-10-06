@@ -12,4 +12,12 @@
     <string name="title_activity_manage_renters">ManageRentersActivity</string>
     <string name="title_activity_add_leases">AddLeasesActivity</string>
     <string name="title_activity_manage_leases">ManageLeasesActivity</string>
+    <string name="manage_renters">Manage Renters</string>
+    <string name="intro">Welcome to AirBmB!</string>
+    <string name="manage_houses">Manage Houses</string>
+    <string name="manage_owners">Manage Owners</string>
+    <string name="manage_leases">Manage Leases</string>
+    <string name="add_renter">Add Renter</string>
+    <string name="view_renters">View Renters</string>
+    <string name="add_owner">Add Owner</string>
 </resources>
